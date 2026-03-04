@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team — Swiss Circle</title>
+<link href="./FAQs — Swiss Circle_files/css2" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold-bright: #f0c84a;
+  --gold-mid:    #c9a432;
+  --gold-dim:    #8a6c1a;
+  --gold-trace:  rgba(200,160,40,0.12);
+  --green-pos:   #40e080;
+  --bg-deep:     #04060a;
+  --bg-mid:      #07090d;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-deep);
+  color: rgba(220,195,140,0.85);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #04060a; }
+::-webkit-scrollbar-thumb { background: rgba(200,160,40,0.30); border-radius: 2px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 80px 22px 60px;
+  background: linear-gradient(180deg, rgba(4,6,10,0.98) 0%, rgba(4,6,10,0.0) 100%);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-brand { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.28em; color: rgba(240,200,60,0.90); text-transform: uppercase; }
+.nav-sub { font-size: 9px; letter-spacing: 0.35em; color: rgba(220,175,50,0.85); text-transform: uppercase; margin-top: 1px; text-shadow: 0 0 10px rgba(200,155,20,0.60), 0 0 20px rgba(200,155,20,0.30); }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.25em; color: rgba(220,175,50,0.85); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: rgba(240,200,60,0.90); }
+.nav-cta {
+  font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(255,215,60,1); text-decoration: none;
+  padding: 11px 32px;
+  border: 1px solid rgba(220,175,50,0.75);
+  box-shadow: 0 0 12px rgba(200,160,40,0.25), inset 0 0 12px rgba(200,160,40,0.05);
+  position: relative; overflow: hidden; transition: all 0.3s;
+}
+.nav-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(200,160,40,0.12);
+  transform: translateX(-100%); transition: transform 0.3s;
+}
+.nav-cta:hover::before { transform: translateX(0); }
+.nav-cta:hover { border-color: rgba(240,200,60,0.95); box-shadow: 0 0 20px rgba(200,160,40,0.45), inset 0 0 16px rgba(200,160,40,0.1); color: #fff; }
+
+/* PAGE HEADER */
+.page-header {
+  position: relative; min-height: 420px;
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.page-header-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 90% at 40% 50%, #0f0d08 0%, #080a0d 40%, #040608 100%);
+}
+.page-header-veins {
+  position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0.30;
+}
+.page-header-gold {
+  position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; opacity: 0.55;
+}
+.page-header-overlay {
+  position: absolute; inset: 0; z-index: 3;
+  background: linear-gradient(180deg, rgba(4,6,10,0.55) 0%, rgba(4,6,10,0.20) 60%, rgba(4,6,10,0.98) 100%);
+}
+.page-header-light {
+  position: absolute; top: -80px; left: 20%; z-index: 3;
+  width: 600px; height: 110%;
+  background: conic-gradient(from 268deg at 50% 0%,
+    transparent 0deg, rgba(210,168,30,0.08) 26deg,
+    rgba(235,190,40,0.16) 38deg, rgba(200,160,28,0.06) 50deg, transparent 90deg);
+  pointer-events: none;
+}
+.page-header-inner {
+  position: relative; z-index: 10;
+  max-width: 1280px; margin: 0 auto;
+  padding: 160px 60px 80px;
+  width: 100%;
+}
+.page-eyebrow {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+  animation: fadeUp 1s ease 0.1s both;
+}
+.page-eyebrow-line {
+  width: 40px; height: 1px;
+  background: linear-gradient(90deg, rgba(200,155,20,0.60), transparent);
+}
+.page-eyebrow-text {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.38em;
+  color: rgba(200,155,20,0.58); text-transform: uppercase;
+}
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(44px, 6vw, 80px);
+  font-weight: 700; line-height: 1.02; letter-spacing: 0.10em;
+  color: transparent;
+  background: linear-gradient(160deg, #fff7b0 0%, #ffe060 10%, #f5c430 28%, #d4980e 55%, #a06c00 78%, #7a5000 100%);
+  -webkit-background-clip: text; background-clip: text;
+  filter: drop-shadow(0 0 60px rgba(255,215,40,0.35)) drop-shadow(0 8px 20px rgba(0,0,0,0.99));
+  text-transform: uppercase;
+  animation: fadeUp 1s ease 0.2s both;
+}
+.page-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 1.8vw, 22px); font-style: italic; font-weight: 300;
+  color: rgba(220,185,90,0.55); letter-spacing: 0.06em;
+  margin-top: 16px;
+  animation: fadeUp 1s ease 0.35s both;
+}
+.page-header-rule {
+  width: 100%; height: 1px; margin-top: 48px;
+  background: linear-gradient(90deg, rgba(200,155,20,0.30), rgba(200,155,20,0.08), transparent);
+  animation: fadeUp 1s ease 0.4s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION */
+section { position: relative; overflow: hidden; }
+.section-inner { max-width: 1280px; margin: 0 auto; padding: 100px 60px; }
+
+/* TEAM INTRO */
+.team-intro {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+  margin-bottom: 100px;
+}
+.team-intro-text p {
+  font-size: 15px; line-height: 1.85;
+  color: rgba(180,155,100,0.65); margin-bottom: 20px;
+}
+.team-stat-row {
+  display: flex; gap: 48px; margin-top: 40px; padding-top: 36px;
+  border-top: 1px solid rgba(200,155,20,0.14);
+}
+.team-stat-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 40px;
+  color: var(--gold-mid);
+  text-shadow: 0 0 20px rgba(200,160,30,0.40); line-height: 1;
+}
+.team-stat-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.28em;
+  color: rgba(160,130,60,0.50); text-transform: uppercase; margin-top: 4px;
+}
+.team-intro-quote {
+  position: relative; padding: 44px 40px;
+  background: rgba(8,10,14,0.80);
+  border: 1px solid rgba(200,155,20,0.14);
+}
+.team-intro-quote::before {
+  content: '\201C';
+  position: absolute; top: 12px; left: 30px;
+  font-family: 'Cormorant Garamond', serif; font-size: 100px;
+  color: rgba(200,155,20,0.12); line-height: 1; pointer-events: none;
+}
+.team-intro-quote blockquote {
+  font-family: 'Cormorant Garamond', serif; font-size: 20px;
+  font-style: italic; font-weight: 300; line-height: 1.75;
+  color: rgba(220,185,90,0.72); position: relative; z-index: 1;
+}
+.team-intro-quote cite {
+  display: block; margin-top: 24px;
+  font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.28em; color: rgba(200,155,20,0.45);
+  text-transform: uppercase; font-style: normal;
+}
+
+/* TEAM GRID */
+.section-eyebrow {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+}
+.section-eyebrow-line {
+  width: 32px; height: 1px;
+  background: linear-gradient(90deg, rgba(200,155,20,0.55), transparent);
+}
+.section-eyebrow-text {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.38em;
+  color: rgba(200,155,20,0.52); text-transform: uppercase;
+}
+.section-title {
+  font-family: 'Cinzel', serif; font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700; letter-spacing: 0.08em;
+  color: transparent;
+  background: linear-gradient(160deg, #f0c84a 0%, #c9a432 50%, #8a6c1a 100%);
+  -webkit-background-clip: text; background-clip: text;
+  filter: drop-shadow(0 0 30px rgba(200,160,30,0.28));
+  line-height: 1.15; margin-bottom: 64px;
+}
+
+.team-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.team-card {
+  position: relative;
+  background: rgba(8,10,14,0.80);
+  border: 1px solid rgba(200,155,20,0.10);
+  overflow: hidden;
+  transition: border-color 0.4s, transform 0.4s;
+}
+.team-card:hover { border-color: rgba(200,155,20,0.30); transform: translateY(-4px); }
+.team-card-img-wrap {
+  position: relative; width: 100%; aspect-ratio: 1/1;
+  overflow: hidden;
+  background: rgba(12,10,6,0.90);
+}
+.team-card-img-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(4,6,10,0.90) 100%);
+}
+.team-avatar {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(30%) contrast(1.05);
+  transition: transform 0.6s ease, filter 0.4s;
+}
+.team-card:hover .team-avatar { transform: scale(1.04); filter: grayscale(0%) contrast(1.08); }
+
+/* Placeholder avatar */
+.team-avatar-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(12,10,6,0.95) 0%, rgba(20,16,8,0.90) 100%);
+}
+.team-avatar-initials {
+  font-family: 'Cinzel', serif; font-size: 52px; font-weight: 700;
+  color: transparent;
+  background: linear-gradient(160deg, #f0c84a 0%, #c9a432 60%, #8a6c1a 100%);
+  -webkit-background-clip: text; background-clip: text;
+  filter: drop-shadow(0 0 24px rgba(200,160,30,0.40));
+  letter-spacing: 0.08em;
+}
+
+.team-card-body { padding: 28px 28px 32px; }
+.team-card-role {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.32em;
+  color: rgba(200,155,20,0.50); text-transform: uppercase; margin-bottom: 8px;
+}
+.team-card-name {
+  font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600;
+  letter-spacing: 0.12em; color: rgba(230,190,60,0.88);
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.team-card-bio {
+  font-size: 12px; line-height: 1.75;
+  color: rgba(165,138,85,0.62); margin-bottom: 20px;
+}
+.team-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.team-tag {
+  font-size: 8px; font-weight: 600; letter-spacing: 0.22em;
+  color: rgba(200,155,20,0.55); text-transform: uppercase;
+  padding: 4px 10px; border: 1px solid rgba(200,155,20,0.18);
+}
+.team-card-social {
+  display: flex; gap: 10px; margin-top: 18px;
+  padding-top: 18px; border-top: 1px solid rgba(200,155,20,0.10);
+}
+.team-social-link {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.22em;
+  color: rgba(200,155,20,0.45); text-transform: uppercase;
+  text-decoration: none; padding: 5px 12px;
+  border: 1px solid rgba(200,155,20,0.16);
+  transition: all 0.3s;
+}
+.team-social-link:hover { color: rgba(240,200,60,0.85); border-color: rgba(200,155,20,0.40); }
+
+.team-card-featured {
+  grid-column: span 1;
+  border-color: rgba(200,155,20,0.22);
+}
+.team-card-featured .team-card-body { padding: 32px; }
+.featured-badge {
+  position: absolute; top: 18px; right: 18px; z-index: 10;
+  font-size: 8px; font-weight: 600; letter-spacing: 0.25em;
+  color: rgba(4,6,10,0.90); text-transform: uppercase;
+  padding: 5px 14px;
+  background: linear-gradient(135deg, #f5c430, #c9a432);
+}
+
+/* BOTTOM STRIP */
+.team-strip {
+  margin-top: 2px; padding: 40px 44px;
+  background: rgba(8,10,14,0.60);
+  border: 1px solid rgba(200,155,20,0.08);
+  display: flex; align-items: center; justify-content: space-between; gap: 40px;
+}
+.team-strip-text {
+  font-size: 13px; line-height: 1.70;
+  color: rgba(165,138,85,0.60); max-width: 600px;
+}
+.team-strip-cta {
+  font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none;
+  color: rgba(255,215,60,1); padding: 13px 32px; white-space: nowrap;
+  border: 1px solid rgba(220,175,50,0.75);
+  box-shadow: 0 0 12px rgba(200,160,40,0.20), inset 0 0 12px rgba(200,160,40,0.05);
+  position: relative; overflow: hidden; transition: all 0.3s;
+}
+.team-strip-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(200,160,40,0.10);
+  transform: translateX(-100%); transition: transform 0.3s;
+}
+.team-strip-cta:hover::before { transform: translateX(0); }
+.team-strip-cta:hover { border-color: rgba(240,200,60,0.95); box-shadow: 0 0 20px rgba(200,160,40,0.40); }
+
+/* FADE-UP */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* SECTION DIVIDER */
+.section-divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,155,20,0.25), transparent);
+}
+
+/* FOOTER */
+footer {
+  background: var(--bg-deep);
+  border-top: 1px solid rgba(200,155,20,0.35);
+  box-shadow: 0 -1px 18px rgba(180,140,20,0.18);
+  padding: 60px;
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-brand {
+  font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600;
+  letter-spacing: 0.28em; color: rgba(200,155,20,0.55); text-transform: uppercase;
+}
+.footer-copy {
+  font-size: 10px; letter-spacing: 0.22em;
+  color: rgba(160,130,60,0.35); text-transform: uppercase;
+}
+.footer-links { display: flex; gap: 32px; list-style: none; }
+.footer-links a {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.25em;
+  color: rgba(200,155,20,0.40); text-decoration: none; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: rgba(240,200,60,0.75); }
+
+
+/* ======================================================
+   MOBILE RESPONSIVE — all pages
+   ====================================================== */
+
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+  position: relative;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: rgba(220,175,50,0.85);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 20px;
+    background: rgba(4,6,10,0.98);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 16px;
+    letter-spacing: 0.30em;
+  }
+  /* Expand nav itself to full screen when open */
+  nav.nav-open {
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: rgba(4,6,10,0.98);
+  }
+  nav.nav-open .nav-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  nav.nav-open .nav-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  nav.nav-open .nav-links { display: flex; }
+  .nav-toggle { display: flex; }
+  .nav-cta { display: none; }
+
+
+  /* Prevent grid children from overflowing their cells */
+  * { min-width: 0; }
+  img, svg, video, canvas { max-width: 100%; height: auto; }
+
+  /* PAGE HEADER */
+  .page-header-inner { padding: 110px 24px 48px; }
+  .page-header-light { display: none; }
+
+  /* SECTION */
+  .section-inner { padding: 60px 24px; }
+
+  /* FOOTER */
+  footer { padding: 40px 24px; }
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-inner { padding: 40px 16px; }
+}
+
+/* -- Team page -- */
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .team-intro { grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; }
+  .team-strip { flex-direction: column; gap: 20px; text-align: center; padding: 28px 20px; }
+  .team-strip-cta { align-self: center; }
+  .team-stat-row { gap: 28px; }
+}
+@media (max-width: 560px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div>
+      <div class="nav-brand">Swiss Circle</div>
+      <div class="nav-sub">Elite Trading</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">What You Get</a></li>
+    <li><a href="index.html#proof">Performance</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="swisscircle_team.html">Team</a></li>
+    <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+    <li><a href="Contact — Swiss Circle.html">Contact</a></li>
+  </ul>
+  <a href="index.html#pricing" class="nav-cta">Join Now</a>
+  <button class="nav-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-bg"></div>
+
+  <svg class="page-header-veins" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,120 C180,100 320,160 500,140 C680,120 720,80 900,110 C1080,140 1200,90 1440,130" stroke="#1a1510" stroke-width="1.8" fill="none" opacity="0.7"/>
+    <path d="M0,220 C200,200 380,260 560,230 C740,200 820,170 1000,210 C1160,245 1300,180 1440,200" stroke="#1a1510" stroke-width="2.2" fill="none" opacity="0.5"/>
+    <path d="M200,0 C240,80 200,160 260,260 C320,340 280,400 320,420" stroke="#1a1510" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M700,0 C660,100 720,200 680,320 C660,380 700,400 680,420" stroke="#1a1510" stroke-width="2" fill="none" opacity="0.5"/>
+  </svg>
+
+  <svg class="page-header-gold" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glow1"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <linearGradient id="vein1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c9a432" stop-opacity="0"/><stop offset="30%" stop-color="#c9a432" stop-opacity="0.7"/><stop offset="70%" stop-color="#f0c84a" stop-opacity="0.5"/><stop offset="100%" stop-color="#c9a432" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path d="M0,120 C180,100 320,160 500,140 C680,120 720,80 900,110 C1080,140 1200,90 1440,130" stroke="url(#vein1)" stroke-width="1.2" fill="none" filter="url(#glow1)"/>
+    <path d="M200,0 C240,80 200,160 260,260 C320,340 280,400 320,420" stroke="#c9a432" stroke-width="1" fill="none" opacity="0.5" filter="url(#glow1)"/>
+  </svg>
+
+  <div class="page-header-overlay"></div>
+  <div class="page-header-light"></div>
+
+  <div class="page-header-inner">
+    <div class="page-eyebrow">
+      <div class="page-eyebrow-line"></div>
+      <span class="page-eyebrow-text">The People Behind The Edge</span>
+    </div>
+    <h1 class="page-title">Our Team</h1>
+    <p class="page-tagline">Traders, analysts, and builders — united by discipline.</p>
+    <div class="page-header-rule"></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section>
+  <div class="section-inner">
+
+    <!-- INTRO -->
+    <div class="team-intro fade-up">
+      <div class="team-intro-text">
+        <p>Swiss Circle is not a signal farm or an anonymous Discord. Every member of our core team has years of live-market experience across crypto futures, DeFi, and macro-driven spot positions.</p>
+        <p>We publish our full track record, name our calls, and hold ourselves accountable to the community. When we miss — we say so. When we hit — the numbers speak for themselves.</p>
+        <div class="team-stat-row">
+          <div>
+            <div class="team-stat-num">20+</div>
+            <div class="team-stat-label">Years Combined</div>
+          </div>
+          <div>
+            <div class="team-stat-num">4</div>
+            <div class="team-stat-label">Core Members</div>
+          </div>
+          <div>
+            <div class="team-stat-num">2</div>
+            <div class="team-stat-label">Time Zones</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-intro-quote">
+        <blockquote>
+          "We don't trade hunches. Every call is structured — entry, invalidation, target. If it doesn't fit the framework, it doesn't get posted."
+        </blockquote>
+        <cite>— Swiss Trader, Founder</cite>
+      </div>
+    </div>
+
+    <!-- SECTION HEADER -->
+    <div class="section-eyebrow fade-up">
+      <div class="section-eyebrow-line"></div>
+      <span class="section-eyebrow-text">Core Members</span>
+    </div>
+    <h2 class="section-title fade-up">The Inner Circle</h2>
+
+    <!-- TEAM GRID -->
+    <div class="team-grid fade-up">
+
+      <!-- Card 1: Founder -->
+      <div class="team-card team-card-featured">
+        <div class="featured-badge">Founder</div>
+        <div class="team-card-img-wrap">
+          <div class="team-avatar-placeholder">
+            <div class="team-avatar-initials">ST</div>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-role">Lead Analyst · Founder</div>
+          <div class="team-card-name">Swiss Trader</div>
+          <div class="team-card-bio">The voice of Swiss Circle. 5+ years trading crypto futures and macro spot. Known for high-conviction calls backed by multi-timeframe confluence. Runs live sessions, posts all major trade setups, and owns the track record publicly.</div>
+          <div class="team-card-tags">
+            <span class="team-tag">BTC/ETH Futures</span>
+            <span class="team-tag">Macro</span>
+            <span class="team-tag">Wyckoff</span>
+            <span class="team-tag">R-Multiple System</span>
+          </div>
+          <div class="team-card-social">
+            <a href="https://x.com/swisstrader09" target="_blank" class="team-social-link">𝕏 @swisstrader09</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="team-card">
+        <div class="team-card-img-wrap">
+          <div class="team-avatar-placeholder">
+            <div class="team-avatar-initials">SC</div>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-role">Market Sentiment Analyst</div>
+          <div class="team-card-name">Scucci</div>
+          <div class="team-card-bio">Scucci is the master of market sentiment at Swiss Circle. With a keen eye for social media trends and an understanding of how public perception influences crypto markets.</div>
+          <div class="team-card-tags">
+            <span class="team-tag">Market Sentiment</span>
+            <span class="team-tag">Social Trends</span>
+            <span class="team-tag">Psychology</span>
+          </div>
+          <div class="team-card-social">
+            <a href="https://x.com/cryptoscucci" target="_blank" class="team-social-link">𝕏 @cryptoscucci</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="team-card">
+        <div class="team-card-img-wrap">
+          <div class="team-avatar-placeholder">
+            <div class="team-avatar-initials">SM</div>
+          </div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-role">Long-Term Investment Strategist</div>
+          <div class="team-card-name">Sandman</div>
+          <div class="team-card-bio">Sandman is known for his concise market analysis which encompasses macroeconomic events and data. His in-depth research into blockchain projects have earned him respect as a wise investor, not just a trader.</div>
+          <div class="team-card-tags">
+            <span class="team-tag">Macro</span>
+            <span class="team-tag">Blockchain Research</span>
+            <span class="team-tag">Long-Term</span>
+          </div>
+          <div class="team-card-social">
+            <a href="https://x.com/cryptoxsandman" target="_blank" class="team-social-link">𝕏 @cryptoxsandman</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM STRIP -->
+    <div class="team-strip fade-up">
+      <p class="team-strip-text">Want to trade alongside this team? Every Swiss Circle membership gives you direct access — live calls, private alerts, and open Q&amp;A sessions with the analysts who put their names on the line.</p>
+      <a href="index.html#pricing" class="team-strip-cta">View Membership Plans</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Swiss Circle</div>
+      <div class="footer-copy" style="margin-top:3px;">© 2025 Swiss Circle. All rights reserved.</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="swisscircle_team.html">Team</a></li>
+      <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+      <li><a href="Contact — Swiss Circle.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.10 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('nav');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    nav.classList.toggle('nav-open');
+    var open = nav.classList.contains('nav-open');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  // Close on link click
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('nav-open');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)Contact — Swiss Circle.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Swiss Circle</title>
+<link href="./Contact — Swiss Circle_files/css2" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold-bright: #f0c84a;
+  --gold-mid:    #c9a432;
+  --gold-dim:    #8a6c1a;
+  --gold-trace:  rgba(200,160,40,0.12);
+  --green-pos:   #40e080;
+  --bg-deep:     #04060a;
+  --bg-mid:      #07090d;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-deep);
+  color: rgba(220,195,140,0.85);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #04060a; }
+::-webkit-scrollbar-thumb { background: rgba(200,160,40,0.30); border-radius: 2px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 80px 22px 60px;
+  background: linear-gradient(180deg, rgba(4,6,10,0.98) 0%, rgba(4,6,10,0.0) 100%);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-brand { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.28em; color: rgba(240,200,60,0.90); text-transform: uppercase; }
+.nav-sub { font-size: 9px; letter-spacing: 0.35em; color: rgba(220,175,50,0.85); text-transform: uppercase; margin-top: 1px; text-shadow: 0 0 10px rgba(200,155,20,0.60), 0 0 20px rgba(200,155,20,0.30); }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.25em; color: rgba(220,175,50,0.85); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: rgba(240,200,60,0.90); }
+.nav-cta {
+  font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,215,60,1); text-decoration: none;
+  padding: 11px 32px; border: 1px solid rgba(220,175,50,0.75);
+  box-shadow: 0 0 12px rgba(200,160,40,0.25), inset 0 0 12px rgba(200,160,40,0.05);
+  position: relative; overflow: hidden; transition: all 0.3s;
+}
+.nav-cta::before { content: ''; position: absolute; inset: 0; background: rgba(200,160,40,0.12); transform: translateX(-100%); transition: transform 0.3s; }
+.nav-cta:hover::before { transform: translateX(0); }
+.nav-cta:hover { border-color: rgba(240,200,60,0.95); box-shadow: 0 0 20px rgba(200,160,40,0.45), inset 0 0 16px rgba(200,160,40,0.1); color: #fff; }
+
+/* PAGE HEADER */
+.page-header { position: relative; min-height: 380px; display: flex; align-items: flex-end; overflow: hidden; }
+.page-header-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 90% at 50% 50%, #0e0c08 0%, #080a0d 40%, #040608 100%); }
+.page-header-overlay { position: absolute; inset: 0; z-index: 3; background: linear-gradient(180deg, rgba(4,6,10,0.55) 0%, rgba(4,6,10,0.20) 60%, rgba(4,6,10,0.98) 100%); }
+.page-header-light {
+  position: absolute; top: -60px; left: 30%; z-index: 3; width: 600px; height: 110%;
+  background: conic-gradient(from 268deg at 50% 0%, transparent 0deg, rgba(210,168,30,0.07) 26deg, rgba(235,190,40,0.14) 38deg, rgba(200,160,28,0.05) 50deg, transparent 90deg);
+  pointer-events: none;
+}
+.page-header-veins { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0.28; }
+.page-header-gold  { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; opacity: 0.52; }
+.page-header-inner { position: relative; z-index: 10; max-width: 1280px; margin: 0 auto; padding: 160px 60px 72px; width: 100%; }
+.page-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; animation: fadeUp 1s ease 0.1s both; }
+.page-eyebrow-line { width: 40px; height: 1px; background: linear-gradient(90deg, rgba(200,155,20,0.60), transparent); }
+.page-eyebrow-text { font-size: 10px; font-weight: 600; letter-spacing: 0.38em; color: rgba(200,155,20,0.58); text-transform: uppercase; }
+.page-title {
+  font-family: 'Cinzel', serif; font-size: clamp(44px, 6vw, 80px); font-weight: 700; line-height: 1.02; letter-spacing: 0.10em;
+  color: transparent; background: linear-gradient(160deg, #fff7b0 0%, #ffe060 10%, #f5c430 28%, #d4980e 55%, #a06c00 78%, #7a5000 100%);
+  -webkit-background-clip: text; background-clip: text;
+  filter: drop-shadow(0 0 60px rgba(255,215,40,0.35)) drop-shadow(0 8px 20px rgba(0,0,0,0.99));
+  text-transform: uppercase; animation: fadeUp 1s ease 0.2s both;
+}
+.page-tagline {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 1.8vw, 22px); font-style: italic; font-weight: 300;
+  color: rgba(220,185,90,0.55); letter-spacing: 0.06em; margin-top: 16px; animation: fadeUp 1s ease 0.35s both;
+}
+.page-header-rule { width: 100%; height: 1px; margin-top: 48px; background: linear-gradient(90deg, rgba(200,155,20,0.30), rgba(200,155,20,0.08), transparent); animation: fadeUp 1s ease 0.4s both; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* SECTION */
+section { position: relative; overflow: hidden; }
+.section-inner { max-width: 1280px; margin: 0 auto; padding: 100px 60px; }
+
+/* CONTACT LAYOUT */
+.contact-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+
+/* LEFT — INFO */
+.contact-info-block { margin-bottom: 48px; }
+.contact-info-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.38em;
+  color: rgba(200,155,20,0.65); text-transform: uppercase; margin-bottom: 10px;
+}
+.contact-info-value {
+  font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600;
+  letter-spacing: 0.12em; color: rgba(235,195,70,0.92); text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-info-value:hover { color: rgba(245,200,60,0.95); }
+.contact-info-sub {
+  font-size: 12px; line-height: 1.70; color: rgba(200,168,105,0.80);
+  margin-top: 6px; max-width: 320px;
+}
+
+.contact-channels { margin-top: 56px; }
+.contact-channels-title {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.38em;
+  color: rgba(200,155,20,0.60); text-transform: uppercase; margin-bottom: 16px;
+}
+.contact-channel-list { display: flex; flex-direction: column; gap: 2px; }
+.contact-channel {
+  display: flex; align-items: center; gap: 18px;
+  padding: 18px 20px;
+  background: rgba(8,10,14,0.70);
+  border: 1px solid rgba(200,155,20,0.10);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.contact-channel:hover { border-color: rgba(200,155,20,0.28); background: rgba(12,10,6,0.85); }
+.contact-channel-icon {
+  width: 38px; height: 38px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(200,155,20,0.20); font-size: 16px;
+  color: rgba(200,155,20,0.75);
+  transition: border-color 0.3s, color 0.3s;
+}
+.contact-channel:hover .contact-channel-icon { border-color: rgba(200,155,20,0.50); color: rgba(230,185,50,0.95); }
+.contact-channel-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.20em;
+  color: rgba(210,168,60,0.82); text-transform: uppercase;
+}
+.contact-channel-desc {
+  font-size: 11px; color: rgba(185,155,95,0.75); margin-top: 2px;
+}
+.contact-channel-arrow {
+  margin-left: auto; font-size: 14px; color: rgba(200,155,20,0.50);
+  transition: color 0.3s, transform 0.3s;
+}
+.contact-channel:hover .contact-channel-arrow { color: rgba(230,185,50,0.80); transform: translateX(4px); }
+
+/* RESPONSE TIME ROW */
+.contact-response-row {
+  display: flex; gap: 2px; margin-top: 2px;
+}
+.contact-response-box {
+  flex: 1; padding: 20px 20px;
+  background: rgba(8,10,14,0.60);
+  border: 1px solid rgba(200,155,20,0.08);
+}
+.contact-response-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+  color: var(--gold-mid); text-shadow: 0 0 16px rgba(200,160,30,0.35); line-height: 1;
+}
+.contact-response-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.24em;
+  color: rgba(185,150,70,0.70); text-transform: uppercase; margin-top: 4px;
+}
+
+/* RIGHT — FORM */
+.contact-form-wrap {
+  background: rgba(8,10,14,0.80);
+  border: 1px solid rgba(200,155,20,0.14);
+  padding: 48px 44px;
+  position: relative; overflow: hidden;
+}
+.contact-form-wrap::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(200,160,30,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.contact-form-header { margin-bottom: 36px; }
+.contact-form-title {
+  font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600;
+  letter-spacing: 0.14em; color: rgba(235,195,70,0.92); text-transform: uppercase;
+}
+.contact-form-subtitle {
+  font-size: 12px; color: rgba(195,162,98,0.80); margin-top: 8px; line-height: 1.65;
+}
+
+/* FORM FIELDS */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 20px; }
+.form-label {
+  display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.30em;
+  color: rgba(200,155,20,0.72); text-transform: uppercase; margin-bottom: 8px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%; background: rgba(4,6,10,0.80);
+  border: 1px solid rgba(200,155,20,0.18);
+  padding: 13px 16px;
+  font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 500;
+  color: rgba(220,185,80,0.85); letter-spacing: 0.06em;
+  outline: none; transition: border-color 0.3s, box-shadow 0.3s;
+  -webkit-appearance: none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(160,130,60,0.30); }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: rgba(200,155,20,0.50);
+  box-shadow: 0 0 0 1px rgba(200,155,20,0.15), 0 0 16px rgba(200,155,20,0.08);
+}
+.form-textarea { resize: vertical; min-height: 130px; line-height: 1.60; }
+.form-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpolyline points='1,1 5,5 9,1' fill='none' stroke='rgba(200,155,20,0.50)' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.form-select option { background: #07090d; color: rgba(220,185,80,0.85); }
+
+.form-topic-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.form-topic-btn {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(200,155,20,0.48); padding: 7px 14px;
+  border: 1px solid rgba(200,155,20,0.18); background: none; cursor: pointer;
+  transition: all 0.25s;
+}
+.form-topic-btn:hover, .form-topic-btn.selected {
+  color: rgba(230,185,50,0.90); border-color: rgba(200,155,20,0.55);
+  background: rgba(200,160,40,0.08);
+}
+.form-topic-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.30em;
+  color: rgba(200,155,20,0.50); text-transform: uppercase; margin-bottom: 10px; display: block;
+}
+
+.form-submit {
+  width: 100%; margin-top: 8px;
+  font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: #04060a; padding: 17px 36px; border: none; cursor: pointer;
+  background: linear-gradient(135deg, #f5c430 0%, #d4980e 60%, #b07800 100%);
+  transition: all 0.3s; box-shadow: 0 0 40px rgba(200,160,30,0.30), 0 4px 20px rgba(0,0,0,0.80);
+  position: relative; overflow: hidden;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(200,160,30,0.50), 0 8px 30px rgba(0,0,0,0.80); }
+.form-submit:active { transform: translateY(0); }
+
+/* Success State */
+.form-success {
+  display: none; text-align: center; padding: 48px 32px;
+}
+.form-success-icon {
+  font-size: 40px; margin-bottom: 20px;
+  filter: drop-shadow(0 0 16px rgba(40,200,100,0.40));
+}
+.form-success-title {
+  font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600;
+  letter-spacing: 0.14em; color: rgba(225,185,60,0.82); text-transform: uppercase; margin-bottom: 12px;
+}
+.form-success-body { font-size: 13px; line-height: 1.75; color: rgba(160,132,78,0.60); }
+
+/* FADE-UP */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.section-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(200,155,20,0.25), transparent); }
+
+/* FOOTER */
+footer { background: var(--bg-deep); border-top: 1px solid rgba(200,155,20,0.35); box-shadow: 0 -1px 18px rgba(180,140,20,0.18); padding: 60px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.footer-brand { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; letter-spacing: 0.28em; color: rgba(200,155,20,0.55); text-transform: uppercase; }
+.footer-copy { font-size: 10px; letter-spacing: 0.22em; color: rgba(160,130,60,0.35); text-transform: uppercase; }
+.footer-links { display: flex; gap: 32px; list-style: none; }
+.footer-links a { font-size: 10px; font-weight: 600; letter-spacing: 0.25em; color: rgba(200,155,20,0.40); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+.footer-links a:hover { color: rgba(240,200,60,0.75); }
+
+
+/* ======================================================
+   MOBILE RESPONSIVE — all pages
+   ====================================================== */
+
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+  position: relative;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: rgba(220,175,50,0.85);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 20px;
+    background: rgba(4,6,10,0.98);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 16px;
+    letter-spacing: 0.30em;
+  }
+  /* Expand nav itself to full screen when open */
+  nav.nav-open {
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: rgba(4,6,10,0.98);
+  }
+  nav.nav-open .nav-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  nav.nav-open .nav-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  nav.nav-open .nav-links { display: flex; }
+  .nav-toggle { display: flex; }
+  .nav-cta { display: none; }
+
+
+  /* Prevent grid children from overflowing their cells */
+  * { min-width: 0; }
+  img, svg, video, canvas { max-width: 100%; height: auto; }
+
+  /* PAGE HEADER */
+  .page-header-inner { padding: 110px 24px 48px; }
+  .page-header-light { display: none; }
+
+  /* SECTION */
+  .section-inner { padding: 60px 24px; }
+
+  /* FOOTER */
+  footer { padding: 40px 24px; }
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-inner { padding: 40px 16px; }
+}
+
+/* -- Contact page -- */
+@media (max-width: 768px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+  .contact-form-wrap { padding: 28px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-response-row { flex-direction: column; }
+  .contact-response-box { flex: none; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div>
+      <div class="nav-brand">Swiss Circle</div>
+      <div class="nav-sub">Elite Trading</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">What You Get</a></li>
+    <li><a href="index.html#proof">Performance</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="swisscircle_team.html">Team</a></li>
+    <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+    <li><a href="Contact — Swiss Circle.html">Contact</a></li>
+  </ul>
+  <a href="index.html#pricing" class="nav-cta">Join Now</a>
+  <button class="nav-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-bg"></div>
+
+  <svg class="page-header-veins" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,150 C300,130 600,180 900,150 C1100,130 1280,170 1440,140" stroke="#1a1510" stroke-width="2" fill="none" opacity="0.6"></path>
+    <path d="M0,280 C200,260 500,310 800,280 C1050,255 1280,295 1440,270" stroke="#1a1510" stroke-width="1.6" fill="none" opacity="0.4"></path>
+    <path d="M600,0 C640,80 590,190 640,290 C670,360 630,370 650,380" stroke="#1a1510" stroke-width="1.8" fill="none" opacity="0.5"></path>
+    <path d="M1000,0 C1020,100 980,200 1010,300 C1030,360 1000,370 1010,380" stroke="#1a1510" stroke-width="1.5" fill="none" opacity="0.4"></path>
+  </svg>
+
+  <svg class="page-header-gold" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glow1"><fegaussianblur stdDeviation="8" result="blur"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+      <lineargradient id="vein1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c9a432" stop-opacity="0"></stop><stop offset="40%" stop-color="#f0c84a" stop-opacity="0.65"></stop><stop offset="60%" stop-color="#c9a432" stop-opacity="0.45"></stop><stop offset="100%" stop-color="#c9a432" stop-opacity="0"></stop></lineargradient>
+    </defs>
+    <path d="M0,150 C300,130 600,180 900,150 C1100,130 1280,170 1440,140" stroke="url(#vein1)" stroke-width="1.2" fill="none" filter="url(#glow1)"></path>
+    <path d="M600,0 C640,80 590,190 640,290 C670,360 630,370 650,380" stroke="#c9a432" stroke-width="1" fill="none" opacity="0.45" filter="url(#glow1)"></path>
+  </svg>
+
+  <div class="page-header-overlay"></div>
+  <div class="page-header-light"></div>
+
+  <div class="page-header-inner">
+    <div class="page-eyebrow">
+      <div class="page-eyebrow-line"></div>
+      <span class="page-eyebrow-text">Get in Touch</span>
+    </div>
+    <h1 class="page-title">Contact</h1>
+    <p class="page-tagline">We read every message. No bots, no auto-replies.</p>
+    <div class="page-header-rule"></div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="contact-layout">
+
+      <!-- LEFT INFO -->
+      <div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-label">Email</div>
+          <a href="mailto:swisscircle09@gmail.com" class="contact-info-value">swisscircle09@gmail.com</a>
+          <p class="contact-info-sub">For general inquiries, partnership requests, or anything that needs a longer conversation.</p>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-label">X (Twitter)</div>
+          <a href="https://x.com/swisstrader09" target="_blank" class="contact-info-value">@swisstrader09</a>
+          <p class="contact-info-sub">Follow for public market commentary and to see what we're watching in real time.</p>
+        </div>
+
+        <div class="contact-channels">
+          <div class="contact-channels-title">Quick Access</div>
+          <div class="contact-channel-list">
+            <a href="https://x.com/swisstrader09" target="_blank" class="contact-channel">
+              <div class="contact-channel-icon">𝕏</div>
+              <div>
+                <div class="contact-channel-label">X / Twitter</div>
+                <div class="contact-channel-desc">@swisstrader09 — public updates</div>
+              </div>
+              <span class="contact-channel-arrow">→</span>
+            </a>
+            <a href="index.html#pricing" class="contact-channel">
+              <div class="contact-channel-icon">◆</div>
+              <div>
+                <div class="contact-channel-label">Membership</div>
+                <div class="contact-channel-desc">View plans and join on Whop</div>
+              </div>
+              <span class="contact-channel-arrow">→</span>
+            </a>
+            <a href="FAQs — Swiss Circle.html" class="contact-channel">
+              <div class="contact-channel-icon">?</div>
+              <div>
+                <div class="contact-channel-label">FAQs</div>
+                <div class="contact-channel-desc">Common questions answered</div>
+              </div>
+              <span class="contact-channel-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-response-row" style="margin-top: 32px;">
+          <div class="contact-response-box">
+            <div class="contact-response-num">&lt;24h</div>
+            <div class="contact-response-label">Email Response</div>
+          </div>
+          <div class="contact-response-box">
+            <div class="contact-response-num">Live</div>
+            <div class="contact-response-label">Active Members</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div style="transition-delay: 0.15s;">
+        <div class="contact-form-wrap">
+
+          <!-- FORM -->
+          <div id="contactForm">
+            <div class="contact-form-header">
+              <div class="contact-form-title">Send a Message</div>
+              <p class="contact-form-subtitle">Fill in the form below — clicking send will open your email client with everything pre-filled to <strong style="color:rgba(200,155,20,0.65);">swisscircle09@gmail.com</strong>.</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-email">Your Email Address</label>
+              <input id="f-email" type="email" class="form-input" placeholder="you@email.com">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-reason">Reason for Contact</label>
+              <select id="f-reason" class="form-input form-select">
+                <option value="" disabled="" selected="">Select a reason…</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Membership Question">Membership Question</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-desc">Description</label>
+              <textarea id="f-desc" class="form-textarea" placeholder="Describe your question or issue in as much detail as possible — it helps us get back to you faster."></textarea>
+            </div>
+
+            <button class="form-submit" onclick="submitForm()">Send Message →</button>
+          </div>
+
+          <!-- SUCCESS -->
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">✦</div>
+            <div class="form-success-title">Email Client Opened</div>
+            <p class="form-success-body">Your message has been prepared and your email client should have opened. If it didn't, email us directly at <a href="mailto:swisscircle09@gmail.com" style="color:rgba(200,155,20,0.65);">swisscircle09@gmail.com</a>.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Swiss Circle</div>
+      <div class="footer-copy" style="margin-top:3px;">© 2025 Swiss Circle. All rights reserved.</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="swisscircle_team.html">Team</a></li>
+      <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+      <li><a href="Contact — Swiss Circle.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="file:///D:/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function submitForm() {
+  const email  = document.getElementById('f-email').value.trim();
+  const reason = document.getElementById('f-reason').value;
+  const desc   = document.getElementById('f-desc').value.trim();
+
+  // Highlight empty fields
+  let valid = true;
+  [document.getElementById('f-email'), document.getElementById('f-reason'), document.getElementById('f-desc')].forEach(el => {
+    if (!el.value.trim()) {
+      el.style.borderColor = 'rgba(220,80,80,0.50)';
+      setTimeout(() => el.style.borderColor = '', 2000);
+      valid = false;
+    }
+  });
+  if (!valid) return;
+
+  const subject = encodeURIComponent('[Swiss Circle] ' + reason);
+  const body    = encodeURIComponent('From: ' + email + '\nReason: ' + reason + '\n\n' + desc);
+  window.location.href = 'mailto:swisscircle09@gmail.com?subject=' + subject + '&body=' + body;
+
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display  = 'block';
+}
+
+// Fade-up
+const observer = new Int</script>
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('nav');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    nav.classList.toggle('nav-open');
+    var open = nav.classList.contains('nav-open');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  // Close on link click
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('nav-open');
+    });
+  });
+})();
+</script>
+
+</body></html>

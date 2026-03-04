@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)file:///D:/Sascha/Downloads/index%20(3).html -->
+<!-- saved from url=(0044)index.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -850,6 +850,170 @@ footer {
 .fade-up.delay-4 { transition-delay: 0.48s; }
 .fade-up.delay-5 { transition-delay: 0.60s; }
 
+
+
+/* ======================================================
+   MOBILE RESPONSIVE — all pages
+   ====================================================== */
+
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+  position: relative;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: rgba(220,175,50,0.85);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 20px;
+    background: rgba(4,6,10,0.98);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 16px;
+    letter-spacing: 0.30em;
+  }
+  /* Expand nav itself to full screen when open */
+  nav.nav-open {
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: rgba(4,6,10,0.98);
+  }
+  nav.nav-open .nav-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  nav.nav-open .nav-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  nav.nav-open .nav-links { display: flex; }
+  .nav-toggle { display: flex; }
+  .nav-cta { display: none; }
+
+
+  /* Prevent grid children from overflowing their cells */
+  * { min-width: 0; }
+  img, svg, video, canvas { max-width: 100%; height: auto; }
+
+  /* PAGE HEADER */
+  .page-header-inner { padding: 110px 24px 48px; }
+  .page-header-light { display: none; }
+
+  /* SECTION */
+  .section-inner { padding: 60px 24px; }
+
+  /* FOOTER */
+  footer { padding: 40px 24px; }
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-inner { padding: 40px 16px; }
+}
+
+/* -- Index page -- */
+
+/* Hero: stack video below text on mobile */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+    padding-top: 80px;
+  }
+  .hero-content {
+    width: 100%;
+    padding: 60px 24px 40px;
+  }
+  .hero-video-col {
+    width: 100%;
+    padding: 0 24px 60px;
+  }
+  .hero-light, .hero-light-2 { display: none; }
+  .hero-frame, .hero-frame-bl, .hero-frame-br { display: none; }
+  .hero-ctas { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-description { max-width: 100%; }
+
+  /* What You Get: 1 column */
+  .features-grid { grid-template-columns: 1fr !important; }
+
+  /* Track Record: stack columns */
+  .proof-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .proof-metrics { grid-template-columns: 1fr 1fr; }
+
+  /* Pricing: stack cards */
+  .pricing-layout { grid-template-columns: 1fr !important; gap: 2px !important; }
+  .pricing-card { padding: 36px 24px; }
+
+  /* Partners */
+  .partners-inner { padding: 0 24px; }
+  .partners-row { gap: 24px; }
+}
+
+/* How to Join: 2×2 grid on tablet, 1-col on phone */
+@media (max-width: 768px) {
+  .join-steps { grid-template-columns: repeat(2, 1fr); gap: 48px 16px; }
+  .join-steps::before { display: none; }
+  .join-step { padding: 0 12px; }
+}
+@media (max-width: 480px) {
+  .join-steps { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 900px) {
+  .features-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-content { padding: 60px 16px 32px; }
+  .hero-video-col { padding: 0 16px 48px; }
+}
+
 </style>
   <!-- Vercel Analytics -->
   <script defer="" src="file:///D:/_vercel/insights/script.js"></script>
@@ -865,12 +1029,18 @@ footer {
     </div>
   </div>
   <ul class="nav-links">
-    <li><a href="file:///D:/Sascha/Downloads/index%20(3).html#features">What You Get</a></li>
-    <li><a href="file:///D:/Sascha/Downloads/index%20(3).html#proof">Performance</a></li>
-    <li><a href="file:///D:/Sascha/Downloads/index%20(3).html#pricing">Pricing</a></li>
-    <li><a href="file:///D:/Sascha/Downloads/index%20(3).html#join">Join</a></li>
+    <li><a href="index.html#features">What You Get</a></li>
+    <li><a href="index.html#proof">Performance</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#join">Join</a></li>
+    <li><a href="swisscircle_team.html">Team</a></li>
+    <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+    <li><a href="Contact — Swiss Circle.html">Contact</a></li>
   </ul>
   <a href="https://whop.com/c/swiss-trader-s-circle/ws" target="_blank" rel="noopener" class="nav-cta">Join Now</a>
+  <button class="nav-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1270,9 +1440,9 @@ footer {
       </div>
     </div>
     <ul class="footer-links">
-      <li><a href="file:///D:/Sascha/Downloads/swisscircle_team.html">Team</a></li>
-      <li><a href="file:///D:/Sascha/Downloads/swisscircle_faq.html">FAQs</a></li>
-      <li><a href="file:///D:/Sascha/Downloads/swisscircle_contact.html">Contact</a></li>
+      <li><a href="swisscircle_team.html">Team</a></li>
+      <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+      <li><a href="Contact — Swiss Circle.html">Contact</a></li>
     </ul>
   </div>
 </footer>
@@ -1357,5 +1527,25 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
 
+
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('nav');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    nav.classList.toggle('nav-open');
+    var open = nav.classList.contains('nav-open');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  // Close on link click
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('nav-open');
+    });
+  });
+})();
+</script>
 
 </body></html>

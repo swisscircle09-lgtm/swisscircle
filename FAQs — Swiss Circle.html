@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)FAQs — Swiss Circle.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs — Swiss Circle</title>
+<link href="./FAQs — Swiss Circle_files/css2" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold-bright: #f0c84a;
+  --gold-mid:    #c9a432;
+  --gold-dim:    #8a6c1a;
+  --gold-trace:  rgba(200,160,40,0.12);
+  --green-pos:   #40e080;
+  --bg-deep:     #04060a;
+  --bg-mid:      #07090d;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-deep);
+  color: rgba(220,195,140,0.85);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #04060a; }
+::-webkit-scrollbar-thumb { background: rgba(200,160,40,0.30); border-radius: 2px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 80px 22px 60px;
+  background: linear-gradient(180deg, rgba(4,6,10,0.98) 0%, rgba(4,6,10,0.0) 100%);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-brand { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.28em; color: rgba(240,200,60,0.90); text-transform: uppercase; }
+.nav-sub { font-size: 9px; letter-spacing: 0.35em; color: rgba(220,175,50,0.85); text-transform: uppercase; margin-top: 1px; text-shadow: 0 0 10px rgba(200,155,20,0.60), 0 0 20px rgba(200,155,20,0.30); }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.25em; color: rgba(220,175,50,0.85); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: rgba(240,200,60,0.90); }
+.nav-cta {
+  font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,215,60,1); text-decoration: none;
+  padding: 11px 32px; border: 1px solid rgba(220,175,50,0.75);
+  box-shadow: 0 0 12px rgba(200,160,40,0.25), inset 0 0 12px rgba(200,160,40,0.05);
+  position: relative; overflow: hidden; transition: all 0.3s;
+}
+.nav-cta::before { content: ''; position: absolute; inset: 0; background: rgba(200,160,40,0.12); transform: translateX(-100%); transition: transform 0.3s; }
+.nav-cta:hover::before { transform: translateX(0); }
+.nav-cta:hover { border-color: rgba(240,200,60,0.95); box-shadow: 0 0 20px rgba(200,160,40,0.45), inset 0 0 16px rgba(200,160,40,0.1); color: #fff; }
+
+/* PAGE HEADER */
+.page-header { position: relative; min-height: 380px; display: flex; align-items: flex-end; overflow: hidden; }
+.page-header-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 90% at 60% 50%, #0f0d08 0%, #080a0d 40%, #040608 100%); }
+.page-header-overlay { position: absolute; inset: 0; z-index: 3; background: linear-gradient(180deg, rgba(4,6,10,0.55) 0%, rgba(4,6,10,0.20) 60%, rgba(4,6,10,0.98) 100%); }
+.page-header-light {
+  position: absolute; top: -80px; right: 15%; z-index: 3;
+  width: 500px; height: 110%;
+  background: conic-gradient(from 268deg at 50% 0%, transparent 0deg, rgba(210,168,30,0.07) 26deg, rgba(235,190,40,0.13) 38deg, rgba(200,160,28,0.05) 50deg, transparent 90deg);
+  pointer-events: none;
+}
+.page-header-veins { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0.25; }
+.page-header-gold  { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; opacity: 0.50; }
+.page-header-inner { position: relative; z-index: 10; max-width: 1280px; margin: 0 auto; padding: 160px 60px 72px; width: 100%; }
+.page-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; animation: fadeUp 1s ease 0.1s both; }
+.page-eyebrow-line { width: 40px; height: 1px; background: linear-gradient(90deg, rgba(200,155,20,0.60), transparent); }
+.page-eyebrow-text { font-size: 10px; font-weight: 600; letter-spacing: 0.38em; color: rgba(200,155,20,0.58); text-transform: uppercase; }
+.page-title {
+  font-family: 'Cinzel', serif; font-size: clamp(44px, 6vw, 80px); font-weight: 700; line-height: 1.02; letter-spacing: 0.10em;
+  color: transparent; background: linear-gradient(160deg, #fff7b0 0%, #ffe060 10%, #f5c430 28%, #d4980e 55%, #a06c00 78%, #7a5000 100%);
+  -webkit-background-clip: text; background-clip: text;
+  filter: drop-shadow(0 0 60px rgba(255,215,40,0.35)) drop-shadow(0 8px 20px rgba(0,0,0,0.99));
+  text-transform: uppercase; animation: fadeUp 1s ease 0.2s both;
+}
+.page-tagline {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 1.8vw, 22px); font-style: italic; font-weight: 300;
+  color: rgba(220,185,90,0.55); letter-spacing: 0.06em; margin-top: 16px; animation: fadeUp 1s ease 0.35s both;
+}
+.page-header-rule { width: 100%; height: 1px; margin-top: 48px; background: linear-gradient(90deg, rgba(200,155,20,0.30), rgba(200,155,20,0.08), transparent); animation: fadeUp 1s ease 0.4s both; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* SECTION */
+section { position: relative; overflow: hidden; }
+.section-inner { max-width: 1280px; margin: 0 auto; padding: 100px 60px; }
+
+/* LAYOUT */
+.faq-layout {
+  display: grid; grid-template-columns: 280px 1fr;
+  gap: 80px; align-items: start;
+}
+
+/* STICKY NAV */
+.faq-nav { position: sticky; top: 100px; }
+.faq-nav-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.38em;
+  color: rgba(200,155,20,0.40); text-transform: uppercase; margin-bottom: 20px;
+}
+.faq-nav-list { list-style: none; }
+.faq-nav-item { margin-bottom: 2px; }
+.faq-nav-link {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  color: rgba(200,155,20,0.45); text-decoration: none; text-transform: uppercase;
+  padding: 10px 16px; border-left: 2px solid transparent;
+  transition: all 0.25s;
+}
+.faq-nav-link:hover, .faq-nav-link.active {
+  color: rgba(230,185,50,0.88); border-left-color: rgba(200,155,20,0.60);
+  background: rgba(200,160,40,0.06);
+}
+.faq-nav-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: rgba(200,155,20,0.40); flex-shrink: 0;
+  transition: background 0.25s;
+}
+.faq-nav-link:hover .faq-nav-dot, .faq-nav-link.active .faq-nav-dot { background: rgba(230,185,50,0.80); }
+
+/* FAQ GROUPS */
+.faq-group { margin-bottom: 72px; }
+.faq-group:last-child { margin-bottom: 0; }
+
+.faq-group-header {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 24px; padding-bottom: 20px;
+  border-bottom: 1px solid rgba(200,155,20,0.14);
+}
+.faq-group-icon { font-size: 22px; filter: drop-shadow(0 0 8px rgba(200,160,30,0.25)); }
+.faq-group-title {
+  font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600;
+  letter-spacing: 0.16em; color: rgba(220,185,60,0.82); text-transform: uppercase;
+}
+
+/* ACCORDION */
+.faq-item {
+  border-bottom: 1px solid rgba(200,155,20,0.09);
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; padding: 22px 0;
+  font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 600;
+  letter-spacing: 0.10em; color: rgba(210,175,80,0.80); text-transform: uppercase;
+  text-align: left; transition: color 0.3s;
+}
+.faq-question:hover { color: rgba(240,200,60,0.95); }
+.faq-question.open   { color: rgba(240,200,60,0.95); }
+.faq-chevron {
+  flex-shrink: 0; width: 20px; height: 20px;
+  border: 1px solid rgba(200,155,20,0.30);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.35s, border-color 0.3s;
+}
+.faq-chevron svg { width: 10px; height: 10px; stroke: rgba(200,155,20,0.60); fill: none; stroke-width: 2; transition: stroke 0.3s; }
+.faq-question.open .faq-chevron { transform: rotate(180deg); border-color: rgba(200,155,20,0.60); }
+.faq-question.open .faq-chevron svg { stroke: rgba(230,185,50,0.90); }
+
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  padding: 0;
+}
+.faq-answer.open {
+  max-height: 400px; padding-bottom: 24px;
+}
+.faq-answer p {
+  font-size: 14px; line-height: 1.80;
+  color: rgba(175,148,95,0.68);
+}
+.faq-answer p + p { margin-top: 12px; }
+.faq-answer a { color: rgba(200,155,20,0.65); text-decoration: underline; text-underline-offset: 3px; }
+.faq-answer a:hover { color: rgba(230,185,50,0.90); }
+
+.faq-answer .answer-highlight {
+  display: inline-block; margin-top: 14px;
+  padding: 10px 18px;
+  background: rgba(8,10,14,0.80);
+  border-left: 2px solid rgba(200,155,20,0.40);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+  color: rgba(220,185,60,0.75);
+}
+
+/* CTA BLOCK */
+.faq-cta-block {
+  margin-top: 80px; padding: 52px 52px;
+  background: rgba(8,10,14,0.80); border: 1px solid rgba(200,155,20,0.18);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: space-between; gap: 48px;
+}
+.faq-cta-block::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(200,160,30,0.06) 0%, transparent 70%);
+}
+.faq-cta-content { position: relative; z-index: 1; }
+.faq-cta-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.38em;
+  color: rgba(200,155,20,0.48); text-transform: uppercase; margin-bottom: 12px;
+}
+.faq-cta-title {
+  font-family: 'Cinzel', serif; font-size: 24px; font-weight: 600;
+  letter-spacing: 0.12em; color: rgba(230,190,60,0.85); text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.faq-cta-body {
+  font-size: 13px; line-height: 1.75; color: rgba(165,138,85,0.60); max-width: 440px;
+}
+.faq-cta-actions { display: flex; gap: 16px; flex-shrink: 0; position: relative; z-index: 1; flex-direction: column; align-items: flex-end; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase; text-decoration: none;
+  color: #04060a; padding: 16px 36px;
+  background: linear-gradient(135deg, #f5c430 0%, #d4980e 60%, #b07800 100%);
+  transition: all 0.3s; box-shadow: 0 0 40px rgba(200,160,30,0.35), 0 4px 20px rgba(0,0,0,0.80);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(200,160,30,0.55), 0 8px 30px rgba(0,0,0,0.80); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.28em; text-transform: uppercase; text-decoration: none;
+  color: rgba(200,160,40,0.80); padding: 15px 36px;
+  border: 1px solid rgba(200,160,40,0.35); transition: all 0.3s;
+}
+.btn-secondary:hover { color: rgba(240,200,60,0.95); border-color: rgba(240,200,60,0.60); background: rgba(200,160,40,0.06); }
+
+/* FADE-UP */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.section-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(200,155,20,0.25), transparent); }
+
+/* FOOTER */
+footer { background: var(--bg-deep); border-top: 1px solid rgba(200,155,20,0.35); box-shadow: 0 -1px 18px rgba(180,140,20,0.18); padding: 60px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.footer-brand { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; letter-spacing: 0.28em; color: rgba(200,155,20,0.55); text-transform: uppercase; }
+.footer-copy { font-size: 10px; letter-spacing: 0.22em; color: rgba(160,130,60,0.35); text-transform: uppercase; }
+.footer-links { display: flex; gap: 32px; list-style: none; }
+.footer-links a { font-size: 10px; font-weight: 600; letter-spacing: 0.25em; color: rgba(200,155,20,0.40); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+.footer-links a:hover { color: rgba(240,200,60,0.75); }
+
+
+/* ======================================================
+   MOBILE RESPONSIVE — all pages
+   ====================================================== */
+
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+  position: relative;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: rgba(220,175,50,0.85);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 20px;
+    background: rgba(4,6,10,0.98);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 16px;
+    letter-spacing: 0.30em;
+  }
+  /* Expand nav itself to full screen when open */
+  nav.nav-open {
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: rgba(4,6,10,0.98);
+  }
+  nav.nav-open .nav-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  nav.nav-open .nav-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  nav.nav-open .nav-links { display: flex; }
+  .nav-toggle { display: flex; }
+  .nav-cta { display: none; }
+
+
+  /* Prevent grid children from overflowing their cells */
+  * { min-width: 0; }
+  img, svg, video, canvas { max-width: 100%; height: auto; }
+
+  /* PAGE HEADER */
+  .page-header-inner { padding: 110px 24px 48px; }
+  .page-header-light { display: none; }
+
+  /* SECTION */
+  .section-inner { padding: 60px 24px; }
+
+  /* FOOTER */
+  footer { padding: 40px 24px; }
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-inner { padding: 40px 16px; }
+}
+
+/* -- FAQs page -- */
+@media (max-width: 768px) {
+  .faq-layout { grid-template-columns: 1fr; gap: 32px; }
+  .faq-nav { position: static; margin-bottom: 8px; }
+  .faq-nav-label { display: none; }
+  .faq-nav-list { display: flex; flex-wrap: wrap; gap: 4px; }
+  .faq-nav-item { flex: none; }
+  .faq-nav-link {
+    border-left: none;
+    border: 1px solid rgba(200,155,20,0.20);
+    padding: 7px 12px;
+    font-size: 9px;
+  }
+  .faq-cta-block {
+    flex-direction: column;
+    gap: 28px;
+    padding: 28px 20px;
+  }
+  .faq-cta-actions {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div>
+      <div class="nav-brand">Swiss Circle</div>
+      <div class="nav-sub">Elite Trading</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">What You Get</a></li>
+    <li><a href="index.html#proof">Performance</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="swisscircle_team.html">Team</a></li>
+    <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+    <li><a href="Contact — Swiss Circle.html">Contact</a></li>
+  </ul>
+  <a href="index.html#pricing" class="nav-cta">Join Now</a>
+  <button class="nav-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-bg"></div>
+
+  <svg class="page-header-veins" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,100 C250,80 480,150 700,120 C920,90 1100,160 1440,110" stroke="#1a1510" stroke-width="2" fill="none" opacity="0.6"></path>
+    <path d="M0,240 C300,220 560,280 800,250 C1040,220 1240,270 1440,240" stroke="#1a1510" stroke-width="1.6" fill="none" opacity="0.4"></path>
+    <path d="M400,0 C440,90 400,180 460,280 C500,350 460,370 480,380" stroke="#1a1510" stroke-width="1.8" fill="none" opacity="0.5"></path>
+  </svg>
+
+  <svg class="page-header-gold" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glow1"><fegaussianblur stdDeviation="8" result="blur"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+      <lineargradient id="vein1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c9a432" stop-opacity="0"></stop><stop offset="35%" stop-color="#f0c84a" stop-opacity="0.65"></stop><stop offset="65%" stop-color="#c9a432" stop-opacity="0.45"></stop><stop offset="100%" stop-color="#c9a432" stop-opacity="0"></stop></lineargradient>
+    </defs>
+    <path d="M0,100 C250,80 480,150 700,120 C920,90 1100,160 1440,110" stroke="url(#vein1)" stroke-width="1.2" fill="none" filter="url(#glow1)"></path>
+  </svg>
+
+  <div class="page-header-overlay"></div>
+  <div class="page-header-light"></div>
+
+  <div class="page-header-inner">
+    <div class="page-eyebrow">
+      <div class="page-eyebrow-line"></div>
+      <span class="page-eyebrow-text">Everything You Need to Know</span>
+    </div>
+    <h1 class="page-title">Frequently Asked<br>Questions</h1>
+    <p class="page-tagline">No fluff. Direct answers.</p>
+    <div class="page-header-rule"></div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="faq-layout">
+
+      <!-- STICKY NAV -->
+      <nav class="faq-nav fade-up visible">
+        <div class="faq-nav-label">Categories</div>
+        <ul class="faq-nav-list">
+          <li class="faq-nav-item"><a href="FAQs — Swiss Circle.html#membership" class="faq-nav-link active"><span class="faq-nav-dot"></span>Membership</a></li>
+          <li class="faq-nav-item"><a href="FAQs — Swiss Circle.html#trading" class="faq-nav-link"><span class="faq-nav-dot"></span>Trading Signals</a></li>
+          <li class="faq-nav-item"><a href="FAQs — Swiss Circle.html#access" class="faq-nav-link"><span class="faq-nav-dot"></span>Access &amp; Platform</a></li>
+          <li class="faq-nav-item"><a href="FAQs — Swiss Circle.html#results" class="faq-nav-link"><span class="faq-nav-dot"></span>Results &amp; Risk</a></li>
+          <li class="faq-nav-item"><a href="FAQs — Swiss Circle.html#billing" class="faq-nav-link"><span class="faq-nav-dot"></span>Billing</a></li>
+        </ul>
+      </nav>
+
+      <!-- FAQ GROUPS -->
+      <div>
+
+        <!-- GROUP 1 -->
+        <div id="membership" class="faq-group fade-up visible">
+          <div class="faq-group-header">
+            <span class="faq-group-icon">◆</span>
+            <h2 class="faq-group-title">Membership</h2>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              What do I get with a Swiss Circle membership?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Membership grants you access to our private community on Whop, which includes: live trade alerts with full entry/TP/SL details, daily market analysis, weekly educational content, on-chain briefings, and direct Q&amp;A access with the Swiss Circle team.</p>
+              <p>VIP members additionally receive early-access calls before they're posted publicly, private 1-on-1 sessions with the lead analyst, and priority support.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              Is there a free trial or money-back guarantee?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>We do not offer a free trial, but we stand behind the quality of our work. If you're unsatisfied within your first 7 days, reach out directly via the contact page and we'll review your case. Our track record is public — we encourage you to review it before joining.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              How many members are in the community?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>We intentionally limit membership to maintain signal quality and community integrity. Swiss Circle is not a mass-market product. We keep our community tight so that every alert gets proper attention and support remains personal.</p>
+              <div class="answer-highlight">Quality over quantity — always.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUP 2 -->
+        <div id="trading" class="faq-group fade-up visible">
+          <div class="faq-group-header">
+            <span class="faq-group-icon">◈</span>
+            <h2 class="faq-group-title">Trading Signals</h2>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              How are trade setups structured?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Every alert includes: pair and direction (Long/Short), entry zone, stop-loss level, take-profit targets, and an R-multiple target. We use R-multiples rather than raw percentages so sizing decisions remain independent of position size.</p>
+              <p>Setups also include a short thesis and the invalidation condition — so you always know exactly when the trade idea is no longer valid.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              What markets do you cover?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Primary focus is on BTC and ETH perpetual futures, with regular coverage of major altcoins (SOL, BNB, LINK, AVAX, etc.) when high-conviction setups form. We occasionally post macro spot plays during significant accumulation zones.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              How many signals are posted per week?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Quality dictates quantity. In an active week with clear setups, you may see 4–8 alerts. In consolidation or uncertain macro periods, we may post fewer or none. We never force setups to justify a subscription — no trade is better than a bad trade.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUP 3 -->
+        <div id="access" class="faq-group fade-up visible">
+          <div class="faq-group-header">
+            <span class="faq-group-icon">◉</span>
+            <h2 class="faq-group-title">Access &amp; Platform</h2>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              Where is the community hosted?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Swiss Circle runs on <strong>Discord</strong> — all signals, analysis, education, and community discussion happen inside our private Discord server. Upon joining, you'll receive an invite link and be granted access to the member-only channels instantly.</p>
+              <p>Access is managed via <strong>Subscord</strong>, which automatically assigns your Discord role when your membership is active and removes it if you cancel — no manual steps needed.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              Do I get notified when a new signal drops?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Discord supports push notifications on both mobile and desktop. We recommend enabling notifications for the signals channel so you never miss a time-sensitive entry. You can fine-tune notification settings per channel to avoid noise from general discussion.</p>
+              <p>VIP members receive alerts in a dedicated early-access channel before they're posted in the main signals feed.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUP 4 -->
+        <div id="results" class="faq-group fade-up visible">
+          <div class="faq-group-header">
+            <span class="faq-group-icon">◇</span>
+            <h2 class="faq-group-title">Results &amp; Risk</h2>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              Can you guarantee profits?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Anyone who guarantees trading profits is lying to you. Markets are probabilistic. Our edge is in consistent process, disciplined risk management, and a positive expectancy system over a large sample of trades — not in winning every call.</p>
+              <div class="answer-highlight">Past performance does not guarantee future results.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              What is your historical win rate and R performance?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Our verified track record is published publicly. Win rate and aggregate R-multiple data is updated monthly. We encourage prospective members to review the performance section on the homepage before joining.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              How much capital do I need to get started?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>There's no minimum. Because we use R-multiples, you can scale any setup to fit your account size. A member with $500 and a member with $50,000 can both follow the same setup with proportional risk. We recommend risking no more than 1–2% of your account per trade.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUP 5 -->
+        <div id="billing" class="faq-group fade-up visible">
+          <div class="faq-group-header">
+            <span class="faq-group-icon">◻</span>
+            <h2 class="faq-group-title">Billing</h2>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              How does billing work?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Memberships are billed monthly through either <strong>Whop</strong> or <strong>Subscord</strong> — both platforms handle payments, subscription management, and your Discord role automatically. You can cancel at any time from your respective dashboard, and your access continues until the end of the current billing period.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              What payment methods are accepted?
+              <span class="faq-chevron"><svg viewBox="0 0 10 6"><polyline points="1,1 5,5 9,1"></polyline></svg></span>
+            </button>
+            <div class="faq-answer">
+              <p>Both <strong>Whop</strong> and <strong>Subscord</strong> accept all major credit and debit cards (Visa, Mastercard, Amex), PayPal, and select cryptocurrencies. Both platforms also handle your Discord role automatically — granting access on signup and revoking it if you cancel. Swiss Circle does not store any payment information directly.</p>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- CTA BLOCK -->
+        <div class="faq-cta-block fade-up visible">
+          <div class="faq-cta-content">
+            <div class="faq-cta-label">Still Have Questions?</div>
+            <div class="faq-cta-title">We're Here to Help</div>
+            <p class="faq-cta-body">Can't find what you're looking for? Reach out directly — we respond to every message personally, not through a bot.</p>
+          </div>
+          <div class="faq-cta-actions">
+            <a href="index.html#pricing" class="btn-primary">Join Swiss Circle</a>
+            <a href="Contact — Swiss Circle.html" class="btn-secondary">Contact the Team →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Swiss Circle</div>
+      <div class="footer-copy" style="margin-top:3px;">© 2025 Swiss Circle. All rights reserved.</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="swisscircle_team.html">Team</a></li>
+      <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+      <li><a href="Contact — Swiss Circle.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+function toggleFAQ(btn) {
+  const item   = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = btn.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-question.open').forEach(q => {
+    q.classList.remove('open');
+    q.closest('.faq-item').querySelector('.faq-answer').classList.remove('open');
+  });
+
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+// Sticky nav highlighting
+const sections = document.querySelectorAll('.faq-group');
+const navLinks  = document.querySelectorAll('.faq-nav-link');
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.faq-nav-link[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+
+sections.forEach(s => io.observe(s));
+
+// Fade-up
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('nav');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    nav.classList.toggle('nav-open');
+    var open = nav.classList.contains('nav-open');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  // Close on link click
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('nav-open');
+    });
+  });
+})();
+</script>
+
+</body></html>
