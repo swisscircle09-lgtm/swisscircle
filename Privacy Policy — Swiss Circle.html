@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Swiss Circle</title>
+<link href="./FAQs — Swiss Circle_files/css2" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --gold-bright: #f0c84a;
+  --gold-mid:    #c9a432;
+  --gold-dim:    #8a6c1a;
+  --bg-deep:     #04060a;
+  --bg-mid:      #07090d;
+}
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw; }
+body {
+  background: var(--bg-deep);
+  color: rgba(220,195,140,0.85);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #04060a; }
+::-webkit-scrollbar-thumb { background: rgba(200,160,40,0.30); border-radius: 2px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 80px 22px 60px;
+  background: linear-gradient(180deg, rgba(4,6,10,0.98) 0%, rgba(4,6,10,0.0) 100%);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-brand { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.28em; color: rgba(240,200,60,0.90); text-transform: uppercase; }
+.nav-sub { font-size: 9px; letter-spacing: 0.35em; color: rgba(220,175,50,0.85); text-transform: uppercase; margin-top: 1px; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.25em; color: rgba(220,175,50,0.85); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: rgba(240,200,60,0.90); }
+.nav-cta {
+  font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(255,215,60,1); text-decoration: none;
+  padding: 11px 32px;
+  border: 1px solid rgba(220,175,50,0.75);
+  box-shadow: 0 0 12px rgba(200,160,40,0.25), inset 0 0 12px rgba(200,160,40,0.05);
+  position: relative; overflow: hidden; transition: all 0.3s;
+}
+.nav-cta::before { content: ''; position: absolute; inset: 0; background: rgba(200,160,40,0.12); transform: translateX(-100%); transition: transform 0.3s; }
+.nav-cta:hover::before { transform: translateX(0); }
+.nav-cta:hover { border-color: rgba(240,200,60,0.95); box-shadow: 0 0 20px rgba(200,160,40,0.45); color: #fff; }
+
+/* PAGE HEADER */
+.page-header { position: relative; min-height: 340px; display: flex; align-items: flex-end; overflow: hidden; }
+.page-header-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 90% at 40% 50%, #0f0d08 0%, #080a0d 40%, #040608 100%); }
+.page-header-overlay { position: absolute; inset: 0; z-index: 3; background: linear-gradient(180deg, rgba(4,6,10,0.55) 0%, rgba(4,6,10,0.20) 60%, rgba(4,6,10,0.98) 100%); }
+.page-header-inner { position: relative; z-index: 10; max-width: 1280px; margin: 0 auto; padding: 140px 60px 64px; width: 100%; }
+.page-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.page-eyebrow-line { width: 40px; height: 1px; background: linear-gradient(90deg, rgba(200,155,20,0.60), transparent); }
+.page-eyebrow-text { font-size: 10px; font-weight: 600; letter-spacing: 0.38em; color: rgba(200,155,20,0.58); text-transform: uppercase; }
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(36px, 5vw, 64px); font-weight: 700; line-height: 1.02; letter-spacing: 0.10em;
+  color: transparent;
+  background: linear-gradient(160deg, #fff7b0 0%, #ffe060 10%, #f5c430 28%, #d4980e 55%, #a06c00 78%, #7a5000 100%);
+  -webkit-background-clip: text; background-clip: text;
+  filter: drop-shadow(0 0 60px rgba(255,215,40,0.35)) drop-shadow(0 8px 20px rgba(0,0,0,0.99));
+  text-transform: uppercase;
+}
+.page-tagline {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(14px, 1.6vw, 19px);
+  font-style: italic; font-weight: 300; color: rgba(220,185,90,0.50); letter-spacing: 0.06em; margin-top: 14px;
+}
+.page-header-rule { width: 100%; height: 1px; margin-top: 40px; background: linear-gradient(90deg, rgba(200,155,20,0.30), rgba(200,155,20,0.08), transparent); }
+
+/* CONTENT */
+.section-inner { max-width: 900px; margin: 0 auto; padding: 80px 60px 120px; }
+.policy-block { margin-bottom: 60px; }
+.policy-block:last-child { margin-bottom: 0; }
+.policy-number { font-size: 9px; font-weight: 600; letter-spacing: 0.38em; color: rgba(200,155,20,0.40); text-transform: uppercase; margin-bottom: 10px; }
+.policy-heading {
+  font-family: 'Cinzel', serif; font-size: clamp(16px, 2vw, 22px);
+  font-weight: 600; letter-spacing: 0.10em; color: rgba(230,190,60,0.80); text-transform: uppercase;
+  margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid rgba(200,155,20,0.12);
+}
+.policy-body { font-size: 14px; line-height: 1.90; color: rgba(180,155,100,0.68); }
+.policy-body p { margin-bottom: 14px; }
+.policy-body p:last-child { margin-bottom: 0; }
+.policy-body ul { margin: 12px 0 12px 20px; }
+.policy-body ul li { margin-bottom: 8px; }
+.policy-body a { color: rgba(220,175,50,0.75); text-decoration: none; border-bottom: 1px solid rgba(220,175,50,0.25); transition: color 0.3s; }
+.policy-body a:hover { color: rgba(240,200,60,0.95); }
+.policy-highlight {
+  background: rgba(200,155,20,0.06); border: 1px solid rgba(200,155,20,0.14);
+  border-left: 3px solid rgba(200,155,20,0.50); padding: 18px 22px; margin: 20px 0;
+  font-size: 13px; line-height: 1.80; color: rgba(200,165,80,0.72);
+}
+.policy-updated {
+  display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.28em;
+  color: rgba(200,155,20,0.35); text-transform: uppercase; margin-bottom: 60px;
+  padding: 6px 14px; border: 1px solid rgba(200,155,20,0.14);
+}
+
+/* FOOTER */
+footer { background: var(--bg-deep); border-top: 1px solid rgba(200,155,20,0.35); box-shadow: 0 -1px 18px rgba(180,140,20,0.18); padding: 60px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.footer-brand { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; letter-spacing: 0.28em; color: rgba(200,155,20,0.55); text-transform: uppercase; }
+.footer-copy { font-size: 10px; letter-spacing: 0.22em; color: rgba(160,130,60,0.35); text-transform: uppercase; }
+.footer-links { display: flex; gap: 32px; list-style: none; }
+.footer-links a { font-size: 10px; font-weight: 600; letter-spacing: 0.25em; color: rgba(200,155,20,0.40); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+.footer-links a:hover { color: rgba(240,200,60,0.75); }
+
+/* MOBILE */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; z-index: 1001; position: relative; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: rgba(220,175,50,0.85); border-radius: 2px; transition: all 0.3s; }
+nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; background: rgba(4,6,10,0.98); backdrop-filter: blur(8px); }
+  .nav-links { display: none; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+  .nav-links a { font-size: 16px; letter-spacing: 0.30em; }
+  nav.nav-open { height: 100dvh; flex-direction: column; justify-content: center; align-items: center; padding: 0; background: rgba(4,6,10,0.98); }
+  nav.nav-open .nav-logo { position: absolute; top: 20px; left: 20px; }
+  nav.nav-open .nav-toggle { position: absolute; top: 20px; right: 20px; }
+  nav.nav-open .nav-links { display: flex; }
+  .nav-toggle { display: flex; }
+  .nav-cta { display: none; }
+  * { min-width: 0; }
+  .page-header-inner { padding: 110px 24px 40px; }
+  .section-inner { padding: 50px 24px 80px; }
+  footer { padding: 40px 24px; }
+  .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { justify-content: center; gap: 16px; flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+  .section-inner { padding: 40px 16px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div>
+      <div class="nav-brand">Swiss Circle</div>
+      <div class="nav-sub">Elite Trading</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">What You Get</a></li>
+    <li><a href="index.html#proof">Performance</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="swisscircle_team.html">Team</a></li>
+    <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+    <li><a href="Contact — Swiss Circle.html">Contact</a></li>
+  </ul>
+  <a href="index.html#pricing" class="nav-cta">Join Now</a>
+  <button class="nav-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="page-header-overlay"></div>
+  <div class="page-header-inner">
+    <div class="page-eyebrow">
+      <div class="page-eyebrow-line"></div>
+      <div class="page-eyebrow-text">Legal</div>
+    </div>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-tagline">How we handle your data — transparently.</p>
+    <div class="page-header-rule"></div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<section>
+  <div class="section-inner">
+
+    <div class="policy-updated">Last updated: March 2026</div>
+
+    <div class="policy-block">
+      <div class="policy-number">Introduction</div>
+      <h2 class="policy-heading">Who We Are</h2>
+      <div class="policy-body">
+        <p>Swiss Circle (“we”, “us”, “our”) is a Switzerland-based cryptocurrency trading community, reachable at <a href="mailto:swisscircle09@gmail.com">swisscircle09@gmail.com</a>.</p>
+        <p>This Privacy Policy explains what personal data we collect, why we collect it, and your rights under the Swiss Federal Act on Data Protection (nDSG) and, where applicable, the EU General Data Protection Regulation (GDPR).</p>
+        <div class="policy-highlight">
+          This website does not use tracking cookies, advertising pixels, or analytics scripts. No personal data is stored on our servers by this website itself.
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <div class="policy-number">01</div>
+      <h2 class="policy-heading">Data We Collect &amp; How</h2>
+      <div class="policy-body">
+        <p><strong style="color:rgba(220,175,50,0.80)">Contact Form</strong><br>
+        When you use the contact form on this website, your browser opens your email client pre-filled with your message. No data is transmitted to our servers. The email is sent directly from your own email account.</p>
+
+        <p><strong style="color:rgba(220,175,50,0.80)">Membership via Whop</strong><br>
+        If you subscribe using a credit or debit card, your payment and account data is collected and processed by <a href="https://whop.com/privacy" target="_blank" rel="noopener">Whop</a>. We receive only the information necessary to grant Discord access (email address, subscription status). We do not store payment card data.</p>
+
+        <p><strong style="color:rgba(220,175,50,0.80)">Membership via Subscord</strong><br>
+        If you subscribe using cryptocurrency, your wallet address and email are collected by <a href="https://subscord.com" target="_blank" rel="noopener">Subscord</a> to process payment and assign your Discord role. Their own privacy policy applies.</p>
+
+        <p><strong style="color:rgba(220,175,50,0.80)">Discord</strong><br>
+        Our community is hosted on Discord. When you join, Discord's own <a href="https://discord.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> governs the collection and use of your data within their platform.</p>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <div class="policy-number">02</div>
+      <h2 class="policy-heading">Cookies &amp; Tracking</h2>
+      <div class="policy-body">
+        <p>This website does not set any cookies of its own. We do not use Google Analytics, Facebook Pixel, or any other third-party tracking or advertising technology.</p>
+        <p>Fonts used on this website are loaded from locally hosted files — no requests are made to external font services that could track your visit.</p>
+        <div class="policy-highlight">
+          Because we set no non-essential cookies, a cookie consent banner is not required for this website under Swiss nDSG or EU ePrivacy rules.
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <div class="policy-number">03</div>
+      <h2 class="policy-heading">Purpose &amp; Legal Basis</h2>
+      <div class="policy-body">
+        <p>We process personal data only for the following purposes:</p>
+        <ul>
+          <li><strong style="color:rgba(220,175,50,0.70)">Membership management</strong> — to verify active subscriptions and grant Discord access (contract performance)</li>
+          <li><strong style="color:rgba(220,175,50,0.70)">Responding to enquiries</strong> — to reply to messages sent via email (legitimate interest)</li>
+          <li><strong style="color:rgba(220,175,50,0.70)">Legal compliance</strong> — to meet obligations under Swiss and applicable EU law</li>
+        </ul>
+        <p>We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <div class="policy-number">04</div>
+      <h2 class="policy-heading">Data Retention</h2>
+      <div class="policy-body">
+        <p>Emails and membership data are retained for as long as your subscription is active plus a reasonable period thereafter (typically 12 months) for account and legal purposes.</p>
+        <p>You may request deletion of your data at any time by contacting us at <a href="mailto:swisscircle09@gmail.com">swisscircle09@gmail.com</a>.</p>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <div class="policy-number">05</div>
+      <h2 class="policy-heading">Third-Party Services</h2>
+      <div class="policy-body">
+        <p>We use the following third-party platforms, each with their own privacy policies:</p>
+        <ul>
+          <li><a href="https://whop.com/privacy" target="_blank" rel="noopener">Whop</a> — payment processing &amp; membership management</li>
+          <li><a href="https://subscord.com" target="_blank" rel="noopener">Subscord</a> — crypto payment &amp; Discord role management</li>
+          <li><a href="https://discord.com/privacy" target="_blank" rel="noopener">Discord</a> — community platform</li>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google (Gmail)</a> — email communication</li>
+        </ul>
+        <p>We encourage you to review the privacy policies of these services directly.</p>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <div class="policy-number">06</div>
+      <h2 class="policy-heading">Your Rights</h2>
+      <div class="policy-body">
+        <p>Under the Swiss nDSG (and GDPR where applicable), you have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your data</li>
+          <li>Object to or restrict processing</li>
+          <li>Data portability (where technically feasible)</li>
+          <li>Lodge a complaint with the Swiss Federal Data Protection and Information Commissioner (FDPIC) at <a href="https://www.edoeb.admin.ch" target="_blank" rel="noopener">edoeb.admin.ch</a></li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:swisscircle09@gmail.com">swisscircle09@gmail.com</a>. We will respond within 30 days.</p>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <div class="policy-number">07</div>
+      <h2 class="policy-heading">Changes to This Policy</h2>
+      <div class="policy-body">
+        <p>We may update this Privacy Policy from time to time. The “Last updated” date at the top of this page reflects the most recent revision. Continued use of the website after changes are posted constitutes acceptance of the updated policy.</p>
+        <p>For any questions, contact us at <a href="mailto:swisscircle09@gmail.com">swisscircle09@gmail.com</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Swiss Circle</div>
+      <div class="footer-copy" style="margin-top:3px;">© 2025 Swiss Circle. All rights reserved.</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="swisscircle_team.html">Team</a></li>
+      <li><a href="FAQs — Swiss Circle.html">FAQs</a></li>
+      <li><a href="Contact — Swiss Circle.html">Contact</a></li>
+      <li><a href="Privacy Policy — Swiss Circle.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('nav');
+toggle.addEventListener('click', () => nav.classList.toggle('nav-open'));
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => nav.classList.remove('nav-open'));
+});
+</script>
+</body>
+</html>
