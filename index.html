@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0044)file:///D:/Sascha/Downloads/index%20(3).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swiss Circle — Elite Crypto Trading Community</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════
    RESET & BASE
@@ -44,7 +44,7 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 22px 60px;
+  padding: 22px 80px 22px 60px;
   background: linear-gradient(180deg, rgba(4,6,10,0.98) 0%, rgba(4,6,10,0.0) 100%);
   backdrop-filter: blur(0px);
 }
@@ -72,29 +72,34 @@ nav {
   list-style: none;
 }
 .nav-links a {
-  font-size: 10px; font-weight: 600; letter-spacing: 0.30em;
-  color: rgba(200,160,40,0.55); text-decoration: none;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.25em;
+  color: rgba(220,175,50,0.85); text-decoration: none;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
 .nav-links a:hover { color: rgba(240,200,60,0.90); }
 
 .nav-cta {
-  font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 700;
-  letter-spacing: 0.30em; text-transform: uppercase;
-  color: rgba(240,200,60,0.92); text-decoration: none;
-  padding: 10px 28px;
-  border: 1px solid rgba(200,160,40,0.45);
+  font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(255,215,60,1); text-decoration: none;
+  padding: 11px 32px;
+  border: 1px solid rgba(220,175,50,0.75);
+  box-shadow: 0 0 12px rgba(200,160,40,0.25), inset 0 0 12px rgba(200,160,40,0.05);
   position: relative; overflow: hidden;
   transition: all 0.3s ease;
 }
 .nav-cta::before {
   content: ''; position: absolute; inset: 0;
-  background: rgba(200,160,40,0.08);
+  background: rgba(200,160,40,0.12);
   transform: translateX(-100%); transition: transform 0.3s ease;
 }
 .nav-cta:hover::before { transform: translateX(0); }
-.nav-cta:hover { border-color: rgba(240,200,60,0.70); }
+.nav-cta:hover { 
+  border-color: rgba(240,200,60,0.95);
+  box-shadow: 0 0 20px rgba(200,160,40,0.45), inset 0 0 16px rgba(200,160,40,0.1);
+  color: #fff;
+}
 
 /* ═══════════════════════════════════════
    HERO
@@ -726,7 +731,8 @@ section { position: relative; overflow: hidden; }
 ═══════════════════════════════════════ */
 footer {
   background: var(--bg-deep);
-  border-top: 1px solid rgba(200,155,20,0.12);
+  border-top: 1px solid rgba(200,155,20,0.35);
+  box-shadow: 0 -1px 18px rgba(180,140,20,0.18);
   padding: 60px;
 }
 .footer-inner {
@@ -738,25 +744,30 @@ footer {
 }
 .footer-logo img {
   width: 32px; height: 32px; object-fit: contain;
-  mix-blend-mode: screen; opacity: 0.80;
+  mix-blend-mode: screen; opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(200,160,40,0.6));
 }
 .footer-brand {
   font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600;
-  letter-spacing: 0.28em; color: rgba(200,160,40,0.60);
+  letter-spacing: 0.28em; color: rgba(220,180,60,0.90);
+  text-shadow: 0 0 12px rgba(200,160,40,0.45);
 }
 .footer-copy {
   font-size: 10px; letter-spacing: 0.20em;
-  color: rgba(160,130,60,0.30); text-transform: uppercase;
+  color: rgba(180,150,70,0.65); text-transform: uppercase;
 }
 .footer-links {
   display: flex; gap: 32px; list-style: none;
 }
 .footer-links a {
   font-size: 10px; letter-spacing: 0.22em;
-  color: rgba(180,145,40,0.40); text-decoration: none;
-  text-transform: uppercase; transition: color 0.3s;
+  color: rgba(200,165,55,0.70); text-decoration: none;
+  text-transform: uppercase; transition: color 0.3s, text-shadow 0.3s;
 }
-.footer-links a:hover { color: rgba(240,200,60,0.70); }
+.footer-links a:hover {
+  color: rgba(240,200,60,0.95);
+  text-shadow: 0 0 10px rgba(220,180,40,0.6);
+}
 
 /* ── VIDEO SOUND BAR ──────────────────────── */
 .video-soundbar {
@@ -841,7 +852,7 @@ footer {
 
 </style>
   <!-- Vercel Analytics -->
-  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer="" src="file:///D:/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -854,10 +865,10 @@ footer {
     </div>
   </div>
   <ul class="nav-links">
-    <li><a href="#features">What You Get</a></li>
-    <li><a href="#proof">Performance</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#join" >Join</a></li>
+    <li><a href="file:///D:/Sascha/Downloads/index%20(3).html#features">What You Get</a></li>
+    <li><a href="file:///D:/Sascha/Downloads/index%20(3).html#proof">Performance</a></li>
+    <li><a href="file:///D:/Sascha/Downloads/index%20(3).html#pricing">Pricing</a></li>
+    <li><a href="file:///D:/Sascha/Downloads/index%20(3).html#join">Join</a></li>
   </ul>
   <a href="https://whop.com/c/swiss-trader-s-circle/ws" target="_blank" rel="noopener" class="nav-cta">Join Now</a>
 </nav>
@@ -869,39 +880,39 @@ footer {
   <!-- Concrete cracks -->
   <svg class="hero-veins-concrete" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
     <defs>
-      <filter id="ct2"><feTurbulence type="fractalNoise" baseFrequency="0.72 0.72" numOctaves="8" seed="5" result="noise"/><feColorMatrix type="matrix" values="0 0 0 0 0.06  0 0 0 0 0.05  0 0 0 0 0.03  0 0 0 16 -7" result="dn"/><feBlend in="SourceGraphic" in2="dn" mode="multiply"/></filter>
+      <filter id="ct2"><feturbulence type="fractalNoise" baseFrequency="0.72 0.72" numOctaves="8" seed="5" result="noise"></feturbulence><fecolormatrix type="matrix" values="0 0 0 0 0.06  0 0 0 0 0.05  0 0 0 0 0.03  0 0 0 16 -7" result="dn"></fecolormatrix><feblend in="SourceGraphic" in2="dn" mode="multiply"></feblend></filter>
     </defs>
-    <rect width="1920" height="1080" fill="#0d0b07" filter="url(#ct2)"/>
+    <rect width="1920" height="1080" fill="#0d0b07" filter="url(#ct2)"></rect>
     <g stroke-linecap="round" stroke-linejoin="round" fill="none">
-      <path d="M 180 0 L 300 200 L 240 380 L 400 560 L 320 740 L 440 900 L 380 1080" stroke="#1a1510" stroke-width="2.2"/>
-      <path d="M 520 0 L 480 120 L 580 260 L 500 420 L 600 580 L 520 750 L 620 900 L 560 1080" stroke="#181310" stroke-width="1.8"/>
-      <path d="M 900 0 L 860 100 L 940 240 L 880 400 L 960 560 L 900 720 L 980 880 L 940 1080" stroke="#1a1510" stroke-width="1.5"/>
-      <path d="M 1280 0 L 1340 160 L 1260 330 L 1360 500 L 1300 670 L 1400 830 L 1340 1080" stroke="#181410" stroke-width="2.0"/>
-      <path d="M 1600 0 L 1660 140 L 1580 300 L 1680 460 L 1620 620 L 1720 780 L 1680 980 L 1920 1000" stroke="#161210" stroke-width="1.8"/>
-      <path d="M 0 220 L 280 240 L 480 210 L 720 260 L 980 225 L 1260 270 L 1520 235 L 1920 248" stroke="#171310" stroke-width="1.4"/>
-      <path d="M 0 500 L 300 520 L 560 490 L 820 530 L 1080 505 L 1360 540 L 1620 510 L 1920 528" stroke="#181410" stroke-width="1.6"/>
-      <path d="M 0 780 L 240 800 L 500 775 L 760 808 L 1020 780 L 1300 812 L 1580 785 L 1920 800" stroke="#161210" stroke-width="1.3"/>
+      <path d="M 180 0 L 300 200 L 240 380 L 400 560 L 320 740 L 440 900 L 380 1080" stroke="#1a1510" stroke-width="2.2"></path>
+      <path d="M 520 0 L 480 120 L 580 260 L 500 420 L 600 580 L 520 750 L 620 900 L 560 1080" stroke="#181310" stroke-width="1.8"></path>
+      <path d="M 900 0 L 860 100 L 940 240 L 880 400 L 960 560 L 900 720 L 980 880 L 940 1080" stroke="#1a1510" stroke-width="1.5"></path>
+      <path d="M 1280 0 L 1340 160 L 1260 330 L 1360 500 L 1300 670 L 1400 830 L 1340 1080" stroke="#181410" stroke-width="2.0"></path>
+      <path d="M 1600 0 L 1660 140 L 1580 300 L 1680 460 L 1620 620 L 1720 780 L 1680 980 L 1920 1000" stroke="#161210" stroke-width="1.8"></path>
+      <path d="M 0 220 L 280 240 L 480 210 L 720 260 L 980 225 L 1260 270 L 1520 235 L 1920 248" stroke="#171310" stroke-width="1.4"></path>
+      <path d="M 0 500 L 300 520 L 560 490 L 820 530 L 1080 505 L 1360 540 L 1620 510 L 1920 528" stroke="#181410" stroke-width="1.6"></path>
+      <path d="M 0 780 L 240 800 L 500 775 L 760 808 L 1020 780 L 1300 812 L 1580 785 L 1920 800" stroke="#161210" stroke-width="1.3"></path>
     </g>
   </svg>
 
   <!-- Gold veins -->
   <svg class="hero-veins-gold" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
     <defs>
-      <filter id="vgs2" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="8"/></filter>
-      <filter id="vgc2" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <linearGradient id="vg1h" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0%" stop-color="#c8900a" stop-opacity="0"/><stop offset="25%" stop-color="#e8a818" stop-opacity="0.7"/><stop offset="55%" stop-color="#f5c830" stop-opacity="0.9"/><stop offset="100%" stop-color="#a06800" stop-opacity="0"/></linearGradient>
-      <linearGradient id="vg2h" x1="0.2" y1="0" x2="0.6" y2="1"><stop offset="0%" stop-color="#b87808" stop-opacity="0"/><stop offset="30%" stop-color="#e0a818" stop-opacity="0.65"/><stop offset="65%" stop-color="#f0c030" stop-opacity="0.85"/><stop offset="100%" stop-color="#906000" stop-opacity="0"/></linearGradient>
-      <linearGradient id="vg3h" x1="1" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#c08010" stop-opacity="0"/><stop offset="28%" stop-color="#e8a818" stop-opacity="0.60"/><stop offset="60%" stop-color="#f8c828" stop-opacity="0.82"/><stop offset="100%" stop-color="#806000" stop-opacity="0"/></linearGradient>
+      <filter id="vgs2" x="-25%" y="-25%" width="150%" height="150%"><fegaussianblur stdDeviation="8"></fegaussianblur></filter>
+      <filter id="vgc2" x="-15%" y="-15%" width="130%" height="130%"><fegaussianblur stdDeviation="2.5" result="b"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+      <lineargradient id="vg1h" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0%" stop-color="#c8900a" stop-opacity="0"></stop><stop offset="25%" stop-color="#e8a818" stop-opacity="0.7"></stop><stop offset="55%" stop-color="#f5c830" stop-opacity="0.9"></stop><stop offset="100%" stop-color="#a06800" stop-opacity="0"></stop></lineargradient>
+      <lineargradient id="vg2h" x1="0.2" y1="0" x2="0.6" y2="1"><stop offset="0%" stop-color="#b87808" stop-opacity="0"></stop><stop offset="30%" stop-color="#e0a818" stop-opacity="0.65"></stop><stop offset="65%" stop-color="#f0c030" stop-opacity="0.85"></stop><stop offset="100%" stop-color="#906000" stop-opacity="0"></stop></lineargradient>
+      <lineargradient id="vg3h" x1="1" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#c08010" stop-opacity="0"></stop><stop offset="28%" stop-color="#e8a818" stop-opacity="0.60"></stop><stop offset="60%" stop-color="#f8c828" stop-opacity="0.82"></stop><stop offset="100%" stop-color="#806000" stop-opacity="0"></stop></lineargradient>
     </defs>
     <g filter="url(#vgs2)" opacity="0.45">
-      <path d="M 180 0 L 300 200 L 240 380 L 400 560 L 320 740 L 440 900 L 380 1080" stroke="#c8900a" stroke-width="14" fill="none"/>
-      <path d="M 1280 0 L 1340 160 L 1260 330 L 1360 500 L 1300 670 L 1400 830 L 1340 1080" stroke="#c8900a" stroke-width="12" fill="none"/>
+      <path d="M 180 0 L 300 200 L 240 380 L 400 560 L 320 740 L 440 900 L 380 1080" stroke="#c8900a" stroke-width="14" fill="none"></path>
+      <path d="M 1280 0 L 1340 160 L 1260 330 L 1360 500 L 1300 670 L 1400 830 L 1340 1080" stroke="#c8900a" stroke-width="12" fill="none"></path>
     </g>
     <g filter="url(#vgc2)">
-      <path d="M 180 0 L 300 200 L 240 380 L 400 560 L 320 740 L 440 900 L 380 1080" stroke="url(#vg1h)" stroke-width="1.4" fill="none"/>
-      <path d="M 520 0 L 480 120 L 580 260 L 500 420 L 600 580 L 520 750 L 620 900 L 560 1080" stroke="url(#vg2h)" stroke-width="1.1" fill="none"/>
-      <path d="M 1280 0 L 1340 160 L 1260 330 L 1360 500 L 1300 670 L 1400 830 L 1340 1080" stroke="url(#vg3h)" stroke-width="1.3" fill="none"/>
-      <path d="M 0 500 L 300 520 L 560 490 L 820 530 L 1080 505 L 1360 540 L 1920 528" stroke="url(#vg1h)" stroke-width="1.1" fill="none"/>
+      <path d="M 180 0 L 300 200 L 240 380 L 400 560 L 320 740 L 440 900 L 380 1080" stroke="url(#vg1h)" stroke-width="1.4" fill="none"></path>
+      <path d="M 520 0 L 480 120 L 580 260 L 500 420 L 600 580 L 520 750 L 620 900 L 560 1080" stroke="url(#vg2h)" stroke-width="1.1" fill="none"></path>
+      <path d="M 1280 0 L 1340 160 L 1260 330 L 1360 500 L 1300 670 L 1400 830 L 1340 1080" stroke="url(#vg3h)" stroke-width="1.3" fill="none"></path>
+      <path d="M 0 500 L 300 520 L 560 490 L 820 530 L 1080 505 L 1360 540 L 1920 528" stroke="url(#vg1h)" stroke-width="1.1" fill="none"></path>
     </g>
   </svg>
 
@@ -913,21 +924,21 @@ footer {
   <!-- Perspective grid -->
   <svg class="hero-grid-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
     <defs>
-      <linearGradient id="glg" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#c9a432" stop-opacity="0"/>
-        <stop offset="40%" stop-color="#c9a432" stop-opacity="0.5"/>
-        <stop offset="100%" stop-color="#c9a432" stop-opacity="0.08"/>
-      </linearGradient>
+      <lineargradient id="glg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#c9a432" stop-opacity="0"></stop>
+        <stop offset="40%" stop-color="#c9a432" stop-opacity="0.5"></stop>
+        <stop offset="100%" stop-color="#c9a432" stop-opacity="0.08"></stop>
+      </lineargradient>
     </defs>
-    <line x1="960" y1="360" x2="0"    y2="1080" stroke="url(#glg)" stroke-width="0.6"/>
-    <line x1="960" y1="360" x2="320"  y2="1080" stroke="url(#glg)" stroke-width="0.6"/>
-    <line x1="960" y1="360" x2="640"  y2="1080" stroke="url(#glg)" stroke-width="0.6"/>
-    <line x1="960" y1="360" x2="960"  y2="1080" stroke="url(#glg)" stroke-width="0.9"/>
-    <line x1="960" y1="360" x2="1280" y2="1080" stroke="url(#glg)" stroke-width="0.6"/>
-    <line x1="960" y1="360" x2="1600" y2="1080" stroke="url(#glg)" stroke-width="0.6"/>
-    <line x1="960" y1="360" x2="1920" y2="1080" stroke="url(#glg)" stroke-width="0.6"/>
-    <line x1="0" y1="700" x2="1920" y2="700" stroke="#c9a432" stroke-width="0.3" stroke-opacity="0.10"/>
-    <line x1="0" y1="850" x2="1920" y2="850" stroke="#c9a432" stroke-width="0.3" stroke-opacity="0.07"/>
+    <line x1="960" y1="360" x2="0" y2="1080" stroke="url(#glg)" stroke-width="0.6"></line>
+    <line x1="960" y1="360" x2="320" y2="1080" stroke="url(#glg)" stroke-width="0.6"></line>
+    <line x1="960" y1="360" x2="640" y2="1080" stroke="url(#glg)" stroke-width="0.6"></line>
+    <line x1="960" y1="360" x2="960" y2="1080" stroke="url(#glg)" stroke-width="0.9"></line>
+    <line x1="960" y1="360" x2="1280" y2="1080" stroke="url(#glg)" stroke-width="0.6"></line>
+    <line x1="960" y1="360" x2="1600" y2="1080" stroke="url(#glg)" stroke-width="0.6"></line>
+    <line x1="960" y1="360" x2="1920" y2="1080" stroke="url(#glg)" stroke-width="0.6"></line>
+    <line x1="0" y1="700" x2="1920" y2="700" stroke="#c9a432" stroke-width="0.3" stroke-opacity="0.10"></line>
+    <line x1="0" y1="850" x2="1920" y2="850" stroke="#c9a432" stroke-width="0.3" stroke-opacity="0.07"></line>
   </svg>
 
   <!-- Frame corners -->
@@ -972,7 +983,7 @@ footer {
     <!-- RIGHT: Video -->
     <div class="hero-video-col">
       <div class="hero-video-wrap" id="videoWrap">
-        <video id="heroVideo" autoplay muted loop playsinline>
+        <video id="heroVideo" autoplay="" muted="" loop="" playsinline="">
           <source src="https://swisscircle.io/wp-content/uploads/2025/02/Progetto-senza-titolo-7.mp4" type="video/mp4">
         </video>
         <div class="hero-video-corner-br"></div>
@@ -980,19 +991,19 @@ footer {
         <!-- SOUND BAR -->
         <div class="video-soundbar" id="soundBar">
           <button class="sound-btn" id="soundBtn" onclick="toggleMute()" title="Toggle sound">
-            <svg id="iconMuted" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-              <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+            <svg id="iconMuted" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>
             </svg>
             <svg id="iconSound" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
             </svg>
           </button>
           <div class="sound-slider-wrap" id="soundTrack">
             <div class="sound-track">
-              <div class="sound-fill" id="soundFill" style="width:10%"></div>
+              <div class="sound-fill" id="soundFill" style="width: 0%;"></div>
             </div>
           </div>
           <span class="sound-label" id="soundLabel">MUTED</span>
@@ -1048,8 +1059,8 @@ footer {
       <div class="feature-card fade-up delay-2">
         <div class="feature-roman">V</div>
         <div class="feature-icon">🎓</div>
-        <div class="feature-title">Education & Sessions</div>
-        <p class="feature-body">Regular live sessions, Q&A's with lead traders, and our free SC Trading Book. Whether you're a beginner or experienced trader, there's always something new to sharpen your edge.</p>
+        <div class="feature-title">Education &amp; Sessions</div>
+        <p class="feature-body">Regular live sessions, Q&amp;A's with lead traders, and our free SC Trading Book. Whether you're a beginner or experienced trader, there's always something new to sharpen your edge.</p>
         <div class="feature-sep"></div>
       </div>
       <div class="feature-card fade-up delay-3">
@@ -1173,13 +1184,13 @@ footer {
         <div class="pricing-price">$79.95</div>
         <div class="pricing-period">Per Month · Cancel Anytime</div>
         <ul class="pricing-features">
-          <li><span class="check">✦</span> Expert analyses with visual & audio explanations</li>
-          <li><span class="check">✦</span> Real-time signals with Entry, SL & TP</li>
-          <li><span class="check">✦</span> Advanced market analysis & strategy</li>
-          <li><span class="check">✦</span> Direct access to Swiss Trader & experts</li>
+          <li><span class="check">✦</span> Expert analyses with visual &amp; audio explanations</li>
+          <li><span class="check">✦</span> Real-time signals with Entry, SL &amp; TP</li>
+          <li><span class="check">✦</span> Advanced market analysis &amp; strategy</li>
+          <li><span class="check">✦</span> Direct access to Swiss Trader &amp; experts</li>
           <li><span class="check">✦</span> Elite trader community on Discord</li>
-          <li><span class="check">✦</span> Live sessions, Q&A's & SC Trading Book</li>
-          <li><span class="check">✦</span> Exclusive events, giveaways & partner deals</li>
+          <li><span class="check">✦</span> Live sessions, Q&amp;A's &amp; SC Trading Book</li>
+          <li><span class="check">✦</span> Exclusive events, giveaways &amp; partner deals</li>
           <li><span class="check">✦</span> Crypto payment accepted (ETH, SOL, BNB…)</li>
         </ul>
         <a href="https://whop.com/c/swiss-trader-s-circle/ws" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;">Join via Card</a>
@@ -1259,9 +1270,9 @@ footer {
       </div>
     </div>
     <ul class="footer-links">
-      <li><a href="swisscircle_team.html">Team</a></li>
-      <li><a href="swisscircle_faq.html">FAQs</a></li>
-      <li><a href="swisscircle_contact.html">Contact</a></li>
+      <li><a href="file:///D:/Sascha/Downloads/swisscircle_team.html">Team</a></li>
+      <li><a href="file:///D:/Sascha/Downloads/swisscircle_faq.html">FAQs</a></li>
+      <li><a href="file:///D:/Sascha/Downloads/swisscircle_contact.html">Contact</a></li>
     </ul>
   </div>
 </footer>
@@ -1345,5 +1356,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
-</body>
-</html>
+
+
+</body></html>
