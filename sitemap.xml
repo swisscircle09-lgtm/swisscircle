@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://swisscircle.trade/</loc>
-    <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://swisscircle.trade/faq.html</loc>
+    <loc>https://swisscircle.trade/faq</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://swisscircle.trade/team.html</loc>
-    <priority>0.8</priority>
+    <loc>https://swisscircle.trade/team</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://swisscircle.trade/contact.html</loc>
-    <priority>0.6</priority>
+    <loc>https://swisscircle.trade/contact</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://swisscircle.trade/privacy.html</loc>
-    <priority>0.3</priority>
+    <loc>https://swisscircle.trade/privacy</loc>
     <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
