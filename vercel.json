@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/FAQs%20%E2%80%94%20Swiss%20Circle.html", "destination": "/faq.html", "permanent": true },
+    { "source": "/Contact%20%E2%80%94%20Swiss%20Circle.html", "destination": "/contact.html", "permanent": true },
+    { "source": "/Privacy%20Policy%20%E2%80%94%20Swiss%20Circle.html", "destination": "/privacy.html", "permanent": true },
+    { "source": "/swisscircle_team.html", "destination": "/team.html", "permanent": true }
+  ]
+}
