@@ -1264,6 +1264,59 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
 }
 .btn-download:hover { opacity: 0.88; transform: translateY(-1px); }
 .btn-download svg { width: 16px; height: 16px; flex-shrink: 0; }
+/* Guide email form */
+.guide-form { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 480px; }
+.guide-form-row { display: flex; gap: 8px; }
+.guide-form-row input[type="email"] {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 4px;
+  padding: 13px 16px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  color: rgba(240,215,160,0.90);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.guide-form-row input[type="email"]::placeholder { color: rgba(180,155,100,0.35); }
+.guide-form-row input[type="email"]:focus { border-color: rgba(201,168,76,0.60); }
+.guide-form-row button {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #C9A84C 0%, #F0C84A 100%);
+  color: #080A0D;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border: none; border-radius: 4px;
+  padding: 13px 22px; cursor: pointer; white-space: nowrap;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.guide-form-row button:hover { opacity: 0.88; transform: translateY(-1px); }
+.guide-form-row button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.guide-form-row button svg { width: 15px; height: 15px; flex-shrink: 0; }
+.guide-consent {
+  display: flex; align-items: flex-start; gap: 10px;
+  cursor: pointer;
+}
+.guide-consent input[type="checkbox"] {
+  margin-top: 2px; flex-shrink: 0;
+  accent-color: #C9A84C;
+  width: 14px; height: 14px; cursor: pointer;
+}
+.guide-consent span {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; line-height: 1.6;
+  color: rgba(180,155,100,0.45);
+  letter-spacing: 0.04em;
+}
+.guide-consent span a { color: rgba(201,168,76,0.55); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.20); }
+.guide-msg {
+  font-family: 'Rajdhani', sans-serif; font-size: 13px;
+  letter-spacing: 0.06em; padding: 10px 14px; border-radius: 3px;
+}
+.guide-msg.success { color: #4ac578; background: rgba(74,197,120,0.08); border: 1px solid rgba(74,197,120,0.20); }
+.guide-msg.error   { color: #dc5c5c; background: rgba(220,60,60,0.08);  border: 1px solid rgba(220,60,60,0.20); }
 .trading-book-note {
   margin-top: 14px;
   font-family: 'Rajdhani', sans-serif;
@@ -1705,11 +1758,21 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
         <span>Sentiment &amp; On-Chain</span>
         <span>Trading Psychology</span>
       </div>
-      <a href="/trading-book.pdf" download="SC-Trading-Guide-V2.pdf" class="btn-download fade-up delay-2">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v13M7 11l5 5 5-5M3 20h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Download Free Guide
-      </a>
-      <div class="trading-book-note fade-up delay-3">34 pages &nbsp;·&nbsp; PDF &nbsp;·&nbsp; No sign-up required</div>
+      <form id="guideForm" class="guide-form fade-up delay-2" onsubmit="submitGuideForm(event)">
+        <div class="guide-form-row">
+          <input type="email" id="guideEmail" placeholder="Your email address" required autocomplete="email">
+          <button type="submit" id="guideSubmitBtn">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v13M7 11l5 5 5-5M3 20h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Send Me the Guide
+          </button>
+        </div>
+        <label class="guide-consent">
+          <input type="checkbox" id="guideConsent" required>
+          <span>I agree to receive the SC Trading Guide and occasional updates from Swiss Circle. Unsubscribe any time. <a href="/privacy.html" target="_blank">Privacy Policy</a>.</span>
+        </label>
+        <div id="guideMsg" class="guide-msg" style="display:none;"></div>
+      </form>
+      <div class="trading-book-note fade-up delay-3">34 pages &nbsp;·&nbsp; PDF &nbsp;·&nbsp; Free &nbsp;·&nbsp; Delivered instantly to your inbox</div>
     </div>
   </div>
 </section>
@@ -1913,6 +1976,43 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     });
   });
 })();
+</script>
+
+<script>
+async function submitGuideForm(e) {
+  e.preventDefault();
+  const email   = document.getElementById('guideEmail').value.trim();
+  const consent = document.getElementById('guideConsent').checked;
+  const btn     = document.getElementById('guideSubmitBtn');
+  const msg     = document.getElementById('guideMsg');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  msg.style.display = 'none';
+  msg.className = 'guide-msg';
+
+  try {
+    const res = await fetch('/api/send-guide', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, consent }),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      msg.textContent = '✓ Check your inbox — the guide is on its way.';
+      msg.classList.add('success');
+      document.getElementById('guideForm').reset();
+    } else {
+      throw new Error(data.error || 'Something went wrong.');
+    }
+  } catch (err) {
+    msg.textContent = '✗ ' + err.message;
+    msg.classList.add('error');
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v13M7 11l5 5 5-5M3 20h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Send Me the Guide';
+  }
+  msg.style.display = 'block';
+}
 </script>
 
 </body></html>
