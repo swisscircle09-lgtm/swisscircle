@@ -1177,6 +1177,114 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
   .about-seo-cols { grid-template-columns: 1fr; gap: 32px; }
 }
 
+/* ── TRADING BOOK LEAD MAGNET ── */
+.trading-book-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.trading-book-mockup {
+  position: relative;
+}
+.trading-book-mockup img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 8px 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,168,76,0.15);
+}
+.trading-book-badge {
+  position: absolute;
+  top: -14px; right: -14px;
+  background: linear-gradient(135deg, #C9A84C, #F0C84A);
+  color: #060809;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+.trading-book-content .section-eyebrow { margin-bottom: 24px; }
+.trading-book-content h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  line-height: 1.05;
+  color: rgba(248,244,236,0.96);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+.trading-book-content h2 span {
+  background: linear-gradient(135deg, #F0C84A 0%, #C9A84C 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.trading-book-content p {
+  font-size: 16px;
+  line-height: 1.78;
+  color: rgba(200,175,130,0.78);
+  margin-bottom: 28px;
+  max-width: 500px;
+}
+.trading-book-chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.trading-book-chapters span {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.80);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 3px;
+  padding: 4px 10px;
+}
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #C9A84C 0%, #F0C84A 100%);
+  color: #060809;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 4px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-download:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-download svg { width: 16px; height: 16px; flex-shrink: 0; }
+.trading-book-note {
+  margin-top: 14px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(180,160,110,0.50);
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .trading-book-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 60px 24px;
+  }
+  .trading-book-mockup { max-width: 180px; margin: 0 auto; }
+  .trading-book-content h2 { font-size: 34px; }
+}
+@media (max-width: 480px) {
+  .trading-book-inner { padding: 48px 16px; }
+}
+
 </style>
   <!-- Vercel Analytics -->
   <script defer="" src="file:///D:/_vercel/insights/script.js"></script>
@@ -1195,6 +1303,7 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
     <li><a href="index.html#features">What You Get</a></li>
     <li><a href="index.html#proof">Performance</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#trading-book" style="color:rgba(240,200,60,0.90);">Free Guide</a></li>
     <li><a href="index.html#join">Join</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="faq.html">FAQs</a></li>
@@ -1393,7 +1502,7 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
         <div class="feature-roman">V</div>
         <div class="feature-icon">🎓</div>
         <div class="feature-title">Education &amp; Sessions</div>
-        <p class="feature-body">Regular live sessions, Q&amp;A's with lead traders, and our free SC Trading Book. Whether you're a beginner or experienced trader, there's always something new to sharpen your edge.</p>
+        <p class="feature-body">Regular live sessions, Q&amp;A's with lead traders, and our free <a href="#trading-book" style="color:rgba(240,200,60,0.85);text-decoration:none;border-bottom:1px solid rgba(240,200,60,0.30)">SC Trading Guide</a>. Whether you're a beginner or experienced trader, there's always something new to sharpen your edge.</p>
         <div class="feature-sep"></div>
       </div>
       <div class="feature-card fade-up delay-3">
@@ -1619,6 +1728,46 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
         <p>The community runs on Discord, with structured channels for live signals, educational content, market commentary, and direct access to the traders. Membership is priced at <strong>$79.95/month</strong> — significantly below comparable services that charge $180 or more — with no lock-in contracts and full cancel-anytime flexibility. Payments are accepted via card, PayPal and cryptocurrency.</p>
         <p>Swiss Circle is rated <strong>4.9 out of 5</strong> by verified members on Whop, with over 60 reviews praising the quality of signals, educational depth, and the responsiveness of the team.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TRADING BOOK LEAD MAGNET -->
+<section id="trading-book">
+  <div class="trading-book-inner">
+    <div class="trading-book-mockup fade-up">
+      <div style="width:100%;aspect-ratio:0.707/1;background:linear-gradient(160deg,#0D1017 0%,#080A0D 100%);border-radius:6px;border:1px solid rgba(201,168,76,0.20);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:8px 12px 40px rgba(0,0,0,0.7)"
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#C9A84C" stroke-width="1.5"/></svg>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.1em;color:rgba(240,200,60,0.85);text-align:center;line-height:1.2">THE<br><span style="font-size:26px">TRADING</span><br>GUIDE</div>
+        <div style="font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:0.15em;color:rgba(200,175,130,0.50);text-transform:uppercase">Swiss Circle</div>
+      </div>
+      <div class="trading-book-badge">FREE</div>
+
+    </div>
+    <div class="trading-book-content">
+      <div class="section-eyebrow fade-up">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Free Download</span>
+      </div>
+      <h2 class="fade-up">The <span>SC Trading</span><br>Guide — Free</h2>
+      <p class="fade-up delay-1">Everything most traders skip and most communities never teach. 14 chapters covering market structure, technical analysis, risk management, and the exact signal format used inside Swiss Circle — completely free.</p>
+      <div class="trading-book-chapters fade-up delay-2">
+        <span>Market Structure</span>
+        <span>Price Action</span>
+        <span>Risk Management</span>
+        <span>Chart Patterns</span>
+        <span>Indicators</span>
+        <span>Volume &amp; Order Flow</span>
+        <span>Sentiment &amp; On-Chain</span>
+        <span>Trading Psychology</span>
+      </div>
+      <a href="/trading-book.pdf" download="SC-Trading-Guide-V2.pdf" class="btn-download fade-up delay-2">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v13M7 11l5 5 5-5M3 20h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download Free Guide
+      </a>
+      <div class="trading-book-note fade-up delay-3">34 pages &nbsp;·&nbsp; PDF &nbsp;·&nbsp; No sign-up required</div>
     </div>
   </div>
 </section>
