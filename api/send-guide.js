@@ -164,7 +164,28 @@ module.exports = async function handler(req, res) {
   };
 
   try {
+    // Send the guide email
     await sgMail.send(msg);
+
+    // Save contact to SendGrid Marketing list
+    // Fails silently — don't block delivery if this errors
+    try {
+      const contactPayload = JSON.stringify({
+        contacts: [{ email }],
+        list_ids: process.env.SENDGRID_LIST_ID ? [process.env.SENDGRID_LIST_ID] : undefined,
+      });
+      await fetch('https://api.sendgrid.com/v3/marketing/contacts', {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: contactPayload,
+      });
+    } catch (contactErr) {
+      console.error('SendGrid contact save error:', contactErr.message);
+    }
+
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('SendGrid error:', err?.response?.body || err.message);

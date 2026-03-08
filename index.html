@@ -2002,6 +2002,9 @@ async function submitGuideForm(e) {
       msg.textContent = '✓ Check your inbox — the guide is on its way.';
       msg.classList.add('success');
       document.getElementById('guideForm').reset();
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'guide_requested', { event_category: 'lead', event_label: 'SC Trading Guide' });
+      }
     } else {
       throw new Error(data.error || 'Something went wrong.');
     }
