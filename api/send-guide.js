@@ -147,7 +147,7 @@ module.exports = async function handler(req, res) {
               <a href="https://www.swisscircle.trade/privacy.html"
                 style="color:#3E3420;text-decoration:none;">Privacy Policy</a>
               &nbsp;&middot;&nbsp;
-              <a href="<%asm_group_unsubscribe_url%>"
+              <a href="<%asm_group_unsubscribe_raw_url%>"
                 style="color:#3E3420;text-decoration:none;">Unsubscribe</a>
             </p>
           </td>
