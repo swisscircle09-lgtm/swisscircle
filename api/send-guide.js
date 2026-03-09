@@ -62,6 +62,9 @@ module.exports = async function handler(req, res) {
         <tr>
           <td bgcolor="#0B0E14" align="center"
             style="background-color:#0B0E14;padding:44px 40px 36px;border-left:1px solid #1E1A10;border-right:1px solid #1E1A10;">
+            <!-- Logo -->
+            <img src="https://www.swisscircle.trade/logo.png" width="64" height="64"
+              alt="Swiss Circle" style="display:block;margin:0 auto 20px;width:64px;height:64px;object-fit:contain;">
             <!-- Eyebrow -->
             <p style="margin:0 0 16px;font-family:Arial,Helvetica,sans-serif;font-size:10px;
               font-weight:700;letter-spacing:0.45em;color:#C9A84C;text-transform:uppercase;">
