@@ -16,8 +16,10 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({ recipient_emails: [decoded] }),
     });
-    const body = await sgRes.text();
-    console.log('SendGrid suppression status:', sgRes.status, body);
+    if (!sgRes.ok) {
+      const body = await sgRes.text();
+      console.error('SendGrid suppression error:', sgRes.status, body);
+    }
   } catch (err) {
     console.error('Unsubscribe error:', err.message);
   }
