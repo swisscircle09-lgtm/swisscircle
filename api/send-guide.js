@@ -135,16 +135,16 @@ module.exports = async function handler(req, res) {
             style="background-color:#09090D;padding:20px 40px;
             border:1px solid #1E1A10;border-top:none;border-radius:0 0 4px 4px;">
             <p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:10px;
-              letter-spacing:0.18em;color:#2E2A1E;text-transform:uppercase;">
+              letter-spacing:0.18em;color:#8A7040;text-transform:uppercase;">
               &copy; 2026 Swiss Circle &nbsp;&middot;&nbsp; swisscircle.trade
             </p>
-            <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#2E2A1E;">
+            <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8A7040;">
               You received this because you requested the SC Trading Guide.&nbsp;
               <a href="https://www.swisscircle.trade/privacy.html"
-                style="color:#3E3420;text-decoration:none;">Privacy Policy</a>
+                style="color:#C9A84C;text-decoration:none;">Privacy Policy</a>
               &nbsp;&middot;&nbsp;
               <a href="https://www.swisscircle.trade/api/unsubscribe?email=${encodeURIComponent(email)}"
-                style="color:#3E3420;text-decoration:none;">Unsubscribe</a>
+                style="color:#C9A84C;text-decoration:none;">Unsubscribe</a>
             </p>
           </td>
         </tr>
