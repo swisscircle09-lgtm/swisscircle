@@ -25,10 +25,6 @@ module.exports = async function handler(req, res) {
       name: 'Swiss Circle',
     },
     subject: 'Your SC Trading Guide is ready',
-    asm: {
-      groupId: parseInt(process.env.SENDGRID_UNSUBSCRIBE_GROUP_ID),
-      groupsToDisplay: [parseInt(process.env.SENDGRID_UNSUBSCRIBE_GROUP_ID)],
-    },
     html: `<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -147,7 +143,7 @@ module.exports = async function handler(req, res) {
               <a href="https://www.swisscircle.trade/privacy.html"
                 style="color:#3E3420;text-decoration:none;">Privacy Policy</a>
               &nbsp;&middot;&nbsp;
-              <a href="<%asm_group_unsubscribe_raw_url%>"
+              <a href="https://www.swisscircle.trade/api/unsubscribe?email=${encodeURIComponent(email)}"
                 style="color:#3E3420;text-decoration:none;">Unsubscribe</a>
             </p>
           </td>
