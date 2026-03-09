@@ -6,22 +6,22 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.swisscircle.trade/faq</loc>
+    <loc>https://www.swisscircle.trade/faq.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.swisscircle.trade/team</loc>
+    <loc>https://www.swisscircle.trade/team.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.swisscircle.trade/contact</loc>
+    <loc>https://www.swisscircle.trade/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.swisscircle.trade/privacy</loc>
+    <loc>https://www.swisscircle.trade/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
