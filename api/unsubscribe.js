@@ -8,7 +8,7 @@ module.exports = async function handler(req, res) {
   const decoded = decodeURIComponent(email);
 
   try {
-    await fetch(`https://api.sendgrid.com/v3/asm/groups/${process.env.SENDGRID_UNSUBSCRIBE_GROUP_ID}/suppressions`, {
+    const sgRes = await fetch(`https://api.sendgrid.com/v3/asm/groups/${process.env.SENDGRID_UNSUBSCRIBE_GROUP_ID}/suppressions`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
@@ -16,6 +16,8 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({ recipient_emails: [decoded] }),
     });
+    const body = await sgRes.text();
+    console.log('SendGrid suppression status:', sgRes.status, body);
   } catch (err) {
     console.error('Unsubscribe error:', err.message);
   }
