@@ -108,12 +108,18 @@
   .tips-list li:last-child { border-bottom: none; }
 
   /* CTAs */
-  .cta-box { margin: 48px 0 32px; background: linear-gradient(135deg, rgba(200,158,22,0.07), rgba(200,158,22,0.03)); border: 1px solid rgba(200,158,22,0.25); border-radius: 10px; padding: 32px 36px; position: relative; overflow: hidden; }
-  .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, rgba(200,158,22,0.7), transparent); }
-  .cta-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,158,22,0.6); margin-bottom: 10px; font-weight: 600; }
-  .cta-title { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 10px; letter-spacing: 0.03em; }
-  .cta-text { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 20px; }
-  .cta-btn { display: inline-block; background: rgba(200,158,22,0.9); color: #0c0c0c; font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; padding: 11px 24px; border-radius: 5px; }
+  .sub-box { margin: 48px 0 32px; background: linear-gradient(135deg, rgba(200,158,22,0.07), rgba(200,158,22,0.03)); border: 1px solid rgba(200,158,22,0.25); border-radius: 10px; padding: 32px 36px; position: relative; overflow: hidden; }
+  .sub-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, rgba(200,158,22,0.7), transparent); }
+  .sub-box-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,158,22,0.6); margin-bottom: 10px; font-weight: 600; }
+  .sub-box-title { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 8px; letter-spacing: 0.03em; }
+  .sub-box-text { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 20px; }
+  .sub-box-form { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .sub-box-input { flex: 1; min-width: 200px; background: rgba(255,255,255,0.05); border: 1px solid rgba(200,158,22,0.25); border-radius: 5px; padding: 11px 16px; font-size: 13px; color: rgba(255,255,255,0.75); outline: none; font-family: 'Inter', sans-serif; }
+  .sub-box-input::placeholder { color: rgba(255,255,255,0.22); }
+  .sub-box-btn { background: rgba(200,158,22,0.9); color: #0c0c0c; font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 11px 24px; border-radius: 5px; border: none; cursor: pointer; white-space: nowrap; }
+  .sub-box-consent { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.5; }
+  .sub-box-consent input { margin-top: 2px; accent-color: rgba(200,158,22,0.9); flex-shrink: 0; cursor: pointer; }
+  .sub-box-msg { display: none; margin-top: 12px; font-size: 12px; padding: 8px 14px; border-radius: 4px; }
 
   .membership-box { margin: 24px 0 32px; background: linear-gradient(135deg, rgba(12,10,4,0.95), rgba(18,14,4,0.95)); border: 1px solid rgba(200,158,22,0.22); border-radius: 10px; overflow: hidden; display: flex; align-items: stretch; }
   .membership-bar { width: 4px; background: linear-gradient(to bottom, rgba(200,158,22,0.9), rgba(200,158,22,0.3)); flex-shrink: 0; }
@@ -259,11 +265,19 @@
     <li><strong>Respect your stop-loss, every time.</strong> The stop is your pre-defined answer to: &ldquo;At what point was I wrong about this trade?&rdquo; If you move it, you are not managing risk &mdash; you are avoiding the feedback the market is giving you.</li>
   </ul>
 
-  <div class="cta-box">
-    <div class="cta-eyebrow">Free Resource</div>
-    <div class="cta-title">The SC Trading Book</div>
-    <div class="cta-text">If you are building the foundations of your trading approach, the SC Trading Book covers risk management, trade structure, and the principles behind how the Swiss Circle team evaluates setups &mdash; at no cost.</div>
-    <a class="cta-btn" href="../index.html#trading-book">Download Free &rarr;</a>
+  <div class="sub-box">
+    <div class="sub-box-eyebrow">Swiss Circle Blog</div>
+    <div class="sub-box-title">Get the next article in your inbox.</div>
+    <div class="sub-box-text">New articles on trading education, risk management, and market insights — delivered straight to you when they go live.</div>
+    <div class="sub-box-form">
+      <input class="sub-box-input" type="email" id="artEmail" placeholder="Your email address">
+      <button class="sub-box-btn" onclick="handleArtSubscribe()">Notify Me</button>
+    </div>
+    <div class="sub-box-consent">
+      <input type="checkbox" id="artConsent">
+      <span>I agree to receive blog update emails from Swiss Circle. <a href="../privacy.html" style="color:rgba(200,158,22,0.6);text-decoration:none;">Privacy Policy</a></span>
+    </div>
+    <div class="sub-box-msg" id="artMsg"></div>
   </div>
 
   <div class="membership-box">
@@ -308,6 +322,37 @@
 </script>
 
 <script defer src="../_vercel/insights/script.js"></script>
+<script>
+  async function handleArtSubscribe() {
+    var email = document.getElementById('artEmail').value.trim();
+    var consent = document.getElementById('artConsent').checked;
+    var btn = document.querySelector('.sub-box-btn');
+    var msg = document.getElementById('artMsg');
+    if (!email || !consent) {
+      msg.style.display = 'block';
+      msg.style.cssText += 'color:#dc5c5c;background:rgba(220,60,60,0.08);border:1px solid rgba(220,60,60,0.2);';
+      msg.textContent = 'Please enter your email and tick the consent box.';
+      return;
+    }
+    btn.disabled = true; btn.textContent = 'Subscribing...';
+    try {
+      var res = await fetch('/api/blog-subscribe', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, consent: true })
+      });
+      if (res.ok) {
+        msg.style.display = 'block';
+        msg.style.cssText += 'color:#4ac578;background:rgba(74,197,120,0.08);border:1px solid rgba(74,197,120,0.2);';
+        msg.textContent = "You're in. We'll let you know when the next article is live.";
+        btn.textContent = 'Subscribed';
+      } else { throw new Error(); }
+    } catch {
+      btn.disabled = false; btn.textContent = 'Notify Me';
+      msg.style.display = 'block';
+      msg.textContent = 'Something went wrong. Please try again.';
+    }
+  }
+</script>
 <script>
   (function() {
     var marks = { 25: false, 50: false, 75: false, 90: false };
