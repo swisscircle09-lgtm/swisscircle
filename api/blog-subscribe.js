@@ -135,7 +135,7 @@ module.exports = async function handler(req, res) {
             <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12px;
               line-height:1.7;color:#4A4030;">
               Want to trade alongside our team in real time?&nbsp;
-              <a href="https://www.swisscircle.trade/#pricing"
+              <a href="https://whop.com/c/swiss-trader-s-circle/wb"
                 style="color:#C9A84C;text-decoration:none;font-weight:700;">
                 Join Swiss Circle &rarr;
               </a>
