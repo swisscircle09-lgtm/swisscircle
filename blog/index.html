@@ -260,7 +260,7 @@
     try {
       const res = await fetch('/api/blog-subscribe', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email, consent: true })
       });
       if (res.ok) {
         msg.style.display = 'block';
