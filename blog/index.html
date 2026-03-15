@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Swiss Circle | Crypto Trading Education</title>
+<meta name="description" content="Trading education, risk management, and market insights written by the Swiss Circle team. Free articles for crypto traders at every level.">
+<meta property="og:title" content="Blog — Swiss Circle">
+<meta property="og:description" content="Trading education, risk management, and market insights written by the Swiss Circle team.">
+<meta property="og:url" content="https://www.swisscircle.trade/blog">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Swiss Circle">
+<meta property="og:image" content="https://www.swisscircle.trade/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Swiss Circle">
+<meta name="twitter:description" content="Trading education, risk management, and market insights written by the Swiss Circle team.">
+<link rel="icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DE23PBLJ5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5DE23PBLJ5');</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #0c0c0c; color: rgba(255,255,255,0.82); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+
+  /* ── Nav */
+  nav {
+    border-bottom: 1px solid rgba(200,158,22,0.12);
+    padding: 0 40px; height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(12,12,12,0.97); backdrop-filter: blur(12px);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { width: 36px; height: 36px; object-fit: contain; mix-blend-mode: screen; }
+  .nav-brand { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.28em; color: rgba(240,200,60,0.90); text-transform: uppercase; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: rgba(240,200,60,0.80); }
+  .nav-links a.active { color: rgba(240,200,60,0.85); }
+  .nav-cta {
+    font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+    color: #0c0c0c; background: rgba(200,158,22,0.90);
+    padding: 9px 20px; border-radius: 4px;
+  }
+
+  /* ── Blog hero */
+  .blog-hero {
+    max-width: 1100px; margin: 0 auto;
+    padding: 64px 40px 52px; position: relative;
+  }
+  .blog-hero::after {
+    content: ''; position: absolute; bottom: 0; left: 40px; right: 40px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,158,22,0.2), transparent);
+  }
+  .blog-eyebrow {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(200,158,22,0.6); font-weight: 600; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .blog-eyebrow::before { content: ''; width: 24px; height: 1.5px; background: rgba(200,158,22,0.4); }
+  .blog-title { font-family: 'Cinzel', serif; font-size: 42px; font-weight: 600; color: rgba(255,255,255,0.92); letter-spacing: 0.06em; margin-bottom: 14px; line-height: 1.15; }
+  .blog-subtitle { font-size: 14px; color: rgba(255,255,255,0.35); max-width: 520px; line-height: 1.7; }
+
+  /* ── Filter tabs */
+  .filter-bar { max-width: 1100px; margin: 0 auto; padding: 28px 40px 0; display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-tab { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; cursor: pointer; border: 1px solid transparent; color: rgba(255,255,255,0.35); background: transparent; transition: all 0.15s; }
+  .filter-tab.active { color: rgba(200,158,22,0.88); background: rgba(200,158,22,0.08); border-color: rgba(200,158,22,0.22); }
+  .filter-tab:hover:not(.active) { color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.04); }
+
+  /* ── Article grid */
+  .article-grid { max-width: 1100px; margin: 0 auto; padding: 36px 40px 60px; }
+
+  /* ── Featured card */
+  .card-featured {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(200,158,22,0.14); border-radius: 10px; overflow: hidden;
+    margin-bottom: 40px; background: rgba(255,255,255,0.02);
+    text-decoration: none; color: inherit; transition: border-color 0.2s;
+  }
+  .card-featured:hover { border-color: rgba(200,158,22,0.32); }
+  .card-featured:hover .card-thumb img { transform: scale(1.03); }
+  .card-thumb { overflow: hidden; position: relative; min-height: 300px; }
+  .card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .featured-badge { position: absolute; top: 16px; left: 16px; font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #0c0c0c; background: rgba(200,158,22,0.92); padding: 4px 10px; border-radius: 3px; }
+  .card-body { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
+  .card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .cat-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,158,22,0.8); background: rgba(200,158,22,0.08); border: 1px solid rgba(200,158,22,0.2); border-radius: 3px; padding: 3px 9px; }
+  .meta-dot { color: rgba(255,255,255,0.15); }
+  .meta-text { font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 0.04em; }
+  .card-title { font-family: 'Rajdhani', sans-serif; font-size: 26px; font-weight: 700; color: rgba(255,255,255,0.92); line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 14px; }
+  .card-excerpt { font-size: 13.5px; color: rgba(255,255,255,0.42); line-height: 1.72; margin-bottom: 28px; }
+  .card-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,158,22,0.75); border-bottom: 1px solid rgba(200,158,22,0.2); padding-bottom: 2px; width: fit-content; }
+
+  /* ── Placeholder cards */
+  .cards-list { display: flex; flex-direction: column; gap: 10px; }
+  .card-placeholder { border: 1px dashed rgba(255,255,255,0.06); border-radius: 8px; padding: 22px 28px; display: flex; align-items: center; gap: 20px; }
+  .placeholder-icon { width: 44px; height: 44px; border-radius: 7px; flex-shrink: 0; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .placeholder-label { font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.16); margin-bottom: 5px; }
+  .placeholder-title { font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.22); }
+
+  /* ── Subscribe strip */
+  .subscribe-strip { max-width: 1100px; margin: 0 auto; padding: 0 40px 80px; }
+  .subscribe-inner { background: linear-gradient(135deg, rgba(200,158,22,0.06), rgba(200,158,22,0.02)); border: 1px solid rgba(200,158,22,0.18); border-radius: 10px; padding: 28px 36px; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; position: relative; overflow: hidden; }
+  .subscribe-inner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(200,158,22,0.6), transparent); }
+  .sub-eyebrow { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,158,22,0.6); margin-bottom: 6px; font-weight: 600; }
+  .sub-title { font-family: 'Rajdhani', sans-serif; font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.88); letter-spacing: 0.03em; }
+  .sub-right { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+  .sub-form { display: flex; gap: 8px; }
+  .sub-input { background: rgba(255,255,255,0.05); border: 1px solid rgba(200,158,22,0.2); border-radius: 5px; padding: 10px 16px; font-size: 13px; color: rgba(255,255,255,0.7); width: 240px; outline: none; font-family: 'Inter', sans-serif; }
+  .sub-input::placeholder { color: rgba(255,255,255,0.2); }
+  .sub-btn { background: rgba(200,158,22,0.88); color: #0c0c0c; font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer; }
+  .sub-consent { display: flex; align-items: flex-start; gap: 8px; }
+  .sub-consent input[type="checkbox"] { margin-top: 2px; accent-color: rgba(200,158,22,0.9); flex-shrink: 0; cursor: pointer; }
+  .sub-consent span { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.5; }
+  .sub-consent a { color: rgba(200,158,22,0.45); text-decoration: none; border-bottom: 1px solid rgba(200,158,22,0.2); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .blog-hero { padding: 40px 20px 36px; }
+    .blog-title { font-size: 28px; }
+    .filter-bar { padding: 20px 20px 0; }
+    .article-grid { padding: 24px 20px 40px; }
+    .card-featured { grid-template-columns: 1fr; }
+    .card-thumb { min-height: 200px; }
+    .card-body { padding: 24px; }
+    .subscribe-strip { padding: 0 20px 60px; }
+    .subscribe-inner { flex-direction: column; }
+    .sub-right { width: 100%; }
+    .sub-input { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <img src="../logo.png" alt="Swiss Circle">
+    <span class="nav-brand">Swiss Circle</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Blog</a></li>
+    <li><a href="../index.html#trading-book" style="color:rgba(240,200,60,0.90);">Free Guide</a></li>
+    <li><a href="../team.html">Team</a></li>
+    <li><a href="../faq.html">FAQs</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="https://whop.com/c/swiss-trader-s-circle/wb" target="_blank" rel="noopener" class="nav-cta">Join Now</a>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-eyebrow">Swiss Circle</div>
+  <div class="blog-title">The Blog</div>
+  <div class="blog-subtitle">Trading education, risk management, and market insights — written by the Swiss Circle team for traders at every level.</div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-tab active">All</div>
+  <div class="filter-tab">Fundamentals</div>
+  <div class="filter-tab">Risk Management</div>
+  <div class="filter-tab">Market Analysis</div>
+  <div class="filter-tab">Trading Psychology</div>
+  <div class="filter-tab">How-To</div>
+  <div class="filter-tab">Macroeconomics</div>
+</div>
+
+<div class="article-grid">
+
+  <a class="card-featured" href="risk-reward-ratio-crypto-trading.html">
+    <div class="card-thumb">
+      <img src="images/blog-graphic-1-entry-sl-tp.png" alt="Risk-reward ratio crypto trading diagram showing Entry, Stop-Loss and Take-Profit levels">
+      <div class="featured-badge">Featured</div>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="cat-tag">Fundamentals</span>
+        <span class="meta-dot">&middot;</span>
+        <span class="meta-text">15 March 2026</span>
+        <span class="meta-dot">&middot;</span>
+        <span class="meta-text">7 min read</span>
+      </div>
+      <div class="card-title">What Is Risk-Reward Ratio in Crypto Trading?</div>
+      <div class="card-excerpt">Risk management separates traders who last from traders who blow up. Learn how to calculate risk-reward ratio, use R-multiples like a professional, and why you don&rsquo;t need to win more than 50% of your trades to be consistently profitable.</div>
+      <span class="card-cta">Read article &rarr;</span>
+    </div>
+  </a>
+
+  <div class="cards-list">
+    <div class="card-placeholder">
+      <div class="placeholder-icon">&#128203;</div>
+      <div>
+        <div class="placeholder-label">Coming soon &middot; Fundamentals</div>
+        <div class="placeholder-title">What Is a Stop-Loss and How to Set One Correctly</div>
+      </div>
+    </div>
+    <div class="card-placeholder">
+      <div class="placeholder-icon">&#128203;</div>
+      <div>
+        <div class="placeholder-label">Coming soon &middot; Risk Management</div>
+        <div class="placeholder-title">Position Sizing in Crypto: How Much Should You Risk Per Trade?</div>
+      </div>
+    </div>
+    <div class="card-placeholder">
+      <div class="placeholder-icon">&#128203;</div>
+      <div>
+        <div class="placeholder-label">Coming soon &middot; Fundamentals</div>
+        <div class="placeholder-title">What Is Market Structure? Support, Resistance and Trend Explained</div>
+      </div>
+    </div>
+    <div class="card-placeholder">
+      <div class="placeholder-icon">&#128203;</div>
+      <div>
+        <div class="placeholder-label">Coming soon &middot; How-To</div>
+        <div class="placeholder-title">How to Read a Trading Signal: Entry, Stop-Loss and Take-Profit</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="subscribe-strip">
+  <div class="subscribe-inner">
+    <div>
+      <div class="sub-eyebrow">Free &middot; Unsubscribe anytime</div>
+      <div class="sub-title">Get new articles straight to your inbox</div>
+    </div>
+    <div class="sub-right">
+      <div class="sub-form">
+        <input class="sub-input" type="email" id="blogEmail" placeholder="Your email address">
+        <button class="sub-btn" id="blogSubBtn" onclick="handleBlogSubscribe()">Subscribe</button>
+      </div>
+      <div class="sub-consent">
+        <input type="checkbox" id="blogConsent" required>
+        <span>I agree to receive blog articles and occasional updates from Swiss Circle. <a href="../privacy.html">Privacy Policy</a>.</span>
+      </div>
+      <div id="blogMsg" style="display:none; font-size:12px; padding:8px 12px; border-radius:4px;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  async function handleBlogSubscribe() {
+    const email   = document.getElementById('blogEmail').value.trim();
+    const consent = document.getElementById('blogConsent').checked;
+    const btn     = document.getElementById('blogSubBtn');
+    const msg     = document.getElementById('blogMsg');
+    if (!email || !consent) {
+      msg.style.display = 'block';
+      msg.style.cssText += 'color:#dc5c5c;background:rgba(220,60,60,0.08);border:1px solid rgba(220,60,60,0.2);';
+      msg.textContent = 'Please enter your email and tick the consent box.';
+      return;
+    }
+    btn.disabled = true; btn.textContent = 'Subscribing...';
+    try {
+      const res = await fetch('/api/blog-subscribe', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      if (res.ok) {
+        msg.style.display = 'block';
+        msg.style.cssText += 'color:#4ac578;background:rgba(74,197,120,0.08);border:1px solid rgba(74,197,120,0.2);';
+        msg.textContent = "You're subscribed. You'll get the next article straight to your inbox.";
+        btn.textContent = 'Subscribed';
+      } else { throw new Error(); }
+    } catch {
+      btn.disabled = false; btn.textContent = 'Subscribe';
+      msg.style.display = 'block';
+      msg.textContent = 'Something went wrong. Please try again.';
+    }
+  }
+</script>
+
+<script defer src="../_vercel/insights/script.js"></script>
+</body>
+</html>
