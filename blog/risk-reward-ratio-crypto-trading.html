@@ -308,5 +308,22 @@
 </script>
 
 <script defer src="../_vercel/insights/script.js"></script>
+<script>
+  (function() {
+    var marks = { 25: false, 50: false, 75: false, 90: false };
+    function onScroll() {
+      var scrolled = window.scrollY + window.innerHeight;
+      var total = document.documentElement.scrollHeight;
+      var pct = Math.round((scrolled / total) * 100);
+      [25, 50, 75, 90].forEach(function(depth) {
+        if (!marks[depth] && pct >= depth) {
+          marks[depth] = true;
+          gtag('event', 'scroll_depth', { depth_percent: depth, page: 'risk-reward-ratio-crypto-trading' });
+        }
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
 </body>
 </html>
