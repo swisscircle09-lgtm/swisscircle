@@ -8,6 +8,7 @@
   ],
   "rewrites": [
     { "source": "/blog", "destination": "/blog/index.html" },
-    { "source": "/blog/risk-reward-ratio-crypto-trading", "destination": "/blog/risk-reward-ratio-crypto-trading.html" }
+    { "source": "/blog/risk-reward-ratio-crypto-trading", "destination": "/blog/risk-reward-ratio-crypto-trading.html" },
+    { "source": "/blog/leverage-crypto-trading", "destination": "/blog/leverage-crypto-trading.html" }
   ]
 }

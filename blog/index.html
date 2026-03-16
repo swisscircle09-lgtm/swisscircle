@@ -104,6 +104,17 @@
   .placeholder-label { font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.16); margin-bottom: 5px; }
   .placeholder-title { font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.22); }
 
+  /* ── Regular article cards */
+  .card-item { border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: border-color 0.2s; background: rgba(255,255,255,0.015); display: flex; flex-direction: column; }
+  .card-item:hover { border-color: rgba(200,158,22,0.28); }
+  .card-item:hover .card-item-img img { transform: scale(1.03); }
+  .card-item-img { overflow: hidden; height: 160px; }
+  .card-item-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .card-item-body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+  .card-item-title { font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.88); line-height: 1.25; letter-spacing: 0.02em; margin-bottom: 8px; margin-top: 10px; }
+  .card-item-excerpt { font-size: 12px; color: rgba(255,255,255,0.36); line-height: 1.68; flex: 1; margin-bottom: 14px; }
+  .card-item-cta { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,158,22,0.7); }
+
   /* ── Subscribe strip */
   .subscribe-strip { max-width: 1100px; margin: 0 auto; padding: 0 40px 80px; }
   .subscribe-inner { background: linear-gradient(135deg, rgba(200,158,22,0.06), rgba(200,158,22,0.02)); border: 1px solid rgba(200,158,22,0.18); border-radius: 10px; padding: 28px 36px; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; position: relative; overflow: hidden; }
@@ -168,6 +179,7 @@
   <div class="filter-tab">Trading Psychology</div>
   <div class="filter-tab">How-To</div>
   <div class="filter-tab">Macroeconomics</div>
+  <div class="filter-tab">AI &amp; Crypto</div>
 </div>
 
 <div class="article-grid">
@@ -193,13 +205,24 @@
   </a>
 
   <div class="cards-list">
-    <div class="card-placeholder">
-      <div class="placeholder-icon">&#128203;</div>
-      <div>
-        <div class="placeholder-label">Coming soon &middot; Fundamentals</div>
-        <div class="placeholder-title">What Is a Stop-Loss and How to Set One Correctly</div>
+    <a class="card-item" href="/blog/leverage-crypto-trading">
+      <div class="card-item-img">
+        <img src="/blog/images/blog-leverage-graphic-1-amplification.png" alt="Leverage in crypto trading — amplification diagram">
       </div>
-    </div>
+      <div class="card-item-body">
+        <div class="card-meta">
+          <span class="cat-tag">Fundamentals</span>
+          <span class="cat-tag">Risk Management</span>
+          <span class="meta-dot">&middot;</span>
+          <span class="meta-text">16 March 2026</span>
+          <span class="meta-dot">&middot;</span>
+          <span class="meta-text">8 min read</span>
+        </div>
+        <div class="card-item-title">What Is Leverage in Crypto Trading — and When Should You Use It?</div>
+        <div class="card-item-excerpt">Leverage amplifies both gains and losses. Learn how it works, how liquidation happens, and the framework professional traders use to decide when leverage is appropriate.</div>
+        <span class="card-item-cta">Read article &rarr;</span>
+      </div>
+    </a>
     <div class="card-placeholder">
       <div class="placeholder-icon">&#128203;</div>
       <div>
