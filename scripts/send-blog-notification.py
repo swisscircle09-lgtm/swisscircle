@@ -55,6 +55,12 @@ ARTICLES = {
         "tags":    "Risk Management · AI & Crypto",
         "excerpt": "AI trading agents are gaining traction in crypto. But before you automate your capital, understand the six key risks that most promoters won't tell you about.",
     },
+    "tao": {
+        "slug":    "bittensor-tao-decentralized-ai-crypto",
+        "title":   "Bittensor & the Decentralized AI Narrative: Is $TAO the Bitcoin of Artificial Intelligence?",
+        "tags":    "AI & Crypto · Fundamentals",
+        "excerpt": "Jensen Huang's GTC 2026 keynote sent AI-linked tokens surging. Here's the fundamentals case for Bittensor — decentralised AI explained, why it compares to BTC, and how to think about it as a trader.",
+    },
 }
 
 # ── Email HTML builder ────────────────────────────────────────────────────────
