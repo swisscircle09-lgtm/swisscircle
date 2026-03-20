@@ -181,6 +181,16 @@ module.exports = async function handler(req, res) {
     // Send confirmation email
     await sgMail.send(msg);
 
+    // Remove from suppression group (so re-subscribers actually receive emails)
+    try {
+      await fetch(`https://api.sendgrid.com/v3/asm/groups/${process.env.SENDGRID_UNSUBSCRIBE_GROUP_ID}/suppressions/${encodeURIComponent(email)}`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}` },
+      });
+    } catch (supErr) {
+      console.error('Suppression removal error:', supErr.message);
+    }
+
     // Add contact to SendGrid Blog Subscribers list
     try {
       const contactPayload = JSON.stringify({
