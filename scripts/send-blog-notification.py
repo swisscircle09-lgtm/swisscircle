@@ -17,6 +17,7 @@ import sys
 # ── Config ────────────────────────────────────────────────────────────────────
 SENDGRID_API_KEY   = os.environ.get("SENDGRID_API_KEY")
 BLOG_LIST_ID       = os.environ.get("SENDGRID_BLOG_LIST_ID", "")   # set in env or paste below
+GUIDE_LIST_ID      = os.environ.get("SENDGRID_LIST_ID", "")        # free guide downloaders
 UNSUBSCRIBE_GRP_ID = 28048
 FROM_EMAIL         = "noreply@swisscircle.trade"
 FROM_NAME          = "Swiss Circle"
@@ -166,19 +167,18 @@ def sg_request(method, path, payload=None):
         return e.code, json.loads(e.read())
 
 
-def get_list_id():
-    """Fetch Blog Subscribers list ID from SendGrid if not set in env."""
-    if BLOG_LIST_ID:
-        return BLOG_LIST_ID
+def get_all_list_ids():
+    """Fetch Blog Subscribers and Guide list IDs from SendGrid."""
     status, data = sg_request("GET", "marketing/lists?page_size=50")
     if status != 200:
         print(f"  ✗ Could not fetch lists: {data}")
-        return None
-    for lst in data.get("result", []):
-        if "blog" in lst["name"].lower():
-            return lst["id"]
-    print("  ✗ Could not find Blog Subscribers list. Set SENDGRID_BLOG_LIST_ID env var.")
-    return None
+        return None, None
+    lists = {lst["name"].lower(): lst["id"] for lst in data.get("result", [])}
+
+    blog_id  = BLOG_LIST_ID  or next((v for k, v in lists.items() if "blog" in k), None)
+    guide_id = GUIDE_LIST_ID or next((v for k, v in lists.items() if "guide" in k or "trading" in k), None)
+
+    return blog_id, guide_id
 
 
 def main():
@@ -207,15 +207,32 @@ def main():
     print(f"  URL     : {url}")
     print(f"  Subject : {subject}")
 
-    # Get list ID
-    print("\n  Fetching Blog Subscribers list...")
-    list_id = get_list_id()
-    if not list_id:
-        sys.exit(1)
-    print(f"  List ID : {list_id}")
+    # Get list IDs
+    print("\n  Fetching SendGrid lists...")
+    blog_id, guide_id = get_all_list_ids()
+    if blog_id:  print(f"  Blog Subscribers list : {blog_id}")
+    else:        print(f"  Blog Subscribers list : not found")
+    if guide_id: print(f"  Guide Downloaders list: {guide_id}")
+    else:        print(f"  Guide Downloaders list: not found")
 
-    # Confirm
-    confirm = input("\nSend notification email to all Blog Subscribers? (y/n): ").strip().lower()
+    # Choose audience
+    print("\nSend to:")
+    print("  1 — Blog Subscribers only")
+    print("  2 — Guide Downloaders only")
+    print("  3 — Both lists (Blog Subscribers + Guide Downloaders)")
+    choice = input("Choice (1/2/3): ").strip()
+
+    list_ids = []
+    if choice == "1" and blog_id:   list_ids = [blog_id]
+    elif choice == "2" and guide_id: list_ids = [guide_id]
+    elif choice == "3":
+        if blog_id:  list_ids.append(blog_id)
+        if guide_id: list_ids.append(guide_id)
+    if not list_ids:
+        print("✗ No valid lists selected. Exiting.")
+        sys.exit(1)
+
+    confirm = input(f"\nSend to {len(list_ids)} list(s)? (y/n): ").strip().lower()
     if confirm != "y":
         print("Cancelled.")
         sys.exit(0)
@@ -226,7 +243,7 @@ def main():
 
     payload = {
         "name": f"Blog Notification — {article['slug']}",
-        "send_to": {"list_ids": [list_id]},
+        "send_to": {"list_ids": list_ids},
         "email_config": {
             "subject":            subject,
             "html_content":       html,
@@ -250,7 +267,7 @@ def main():
         print(f"  ✗ Failed to schedule: {data}")
         sys.exit(1)
 
-    print(f"\n✓ Email sent to all Blog Subscribers.")
+    print(f"\n✓ Email sent to {len(list_ids)} list(s).")
     print(f"  Check SendGrid Activity Feed to confirm delivery.\n")
 
 
