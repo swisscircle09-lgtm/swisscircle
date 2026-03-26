@@ -184,22 +184,22 @@
 </div>
 
 <div class="filter-bar">
-  <div class="filter-tab active">All</div>
-  <div class="filter-tab">Fundamentals</div>
-  <div class="filter-tab">Risk Management</div>
-  <div class="filter-tab">AI &amp; Crypto</div>
-  <div class="filter-tab">Education</div>
-  <div class="filter-tab">Beginner</div>
-  <div class="filter-tab">Market Analysis</div>
-  <div class="filter-tab">Macroeconomics</div>
-  <div class="filter-tab">How-To</div>
-  <div class="filter-tab">Trading Psychology</div>
+  <div class="filter-tab active" data-filter="all">All</div>
+  <div class="filter-tab" data-filter="fundamentals">Fundamentals</div>
+  <div class="filter-tab" data-filter="risk-management">Risk Management</div>
+  <div class="filter-tab" data-filter="ai-crypto">AI &amp; Crypto</div>
+  <div class="filter-tab" data-filter="education">Education</div>
+  <div class="filter-tab" data-filter="beginner">Beginner</div>
+  <div class="filter-tab" data-filter="market-analysis">Market Analysis</div>
+  <div class="filter-tab" data-filter="macroeconomics">Macroeconomics</div>
+  <div class="filter-tab" data-filter="how-to">How-To</div>
+  <div class="filter-tab" data-filter="trading-psychology">Trading Psychology</div>
 </div>
 
 <div class="article-grid">
 
   <!-- Featured: newest article -->
-  <a class="card-featured" href="/blog/crypto-glossary-trading-terms">
+  <a class="card-featured" href="/blog/crypto-glossary-trading-terms" data-tags="education beginner">
     <div class="card-thumb" style="background:linear-gradient(135deg,#09090d 0%,#0c0d13 50%,#09090d 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
       <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(200,158,22,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,158,22,0.04) 1px,transparent 1px);background-size:48px 48px;"></div>
       <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,158,22,0.05) 0%,transparent 65%);"></div>
@@ -234,7 +234,7 @@
   </a>
 
   <div class="cards-list">
-    <a class="card-item-h" href="/blog/bittensor-tao-subnets-staking-guide">
+    <a class="card-item-h" href="/blog/bittensor-tao-subnets-staking-guide" data-tags="ai-crypto fundamentals">
       <div class="card-item-img" style="background:linear-gradient(135deg,#080a0f,#0a0d14);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
         <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(200,158,22,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,158,22,0.04) 1px,transparent 1px);background-size:32px 32px;"></div>
         <div style="position:relative;z-index:1;text-align:center;padding:20px;">
@@ -260,7 +260,7 @@
         <span class="card-item-cta">Read article &rarr;</span>
       </div>
     </a>
-    <a class="card-item-h" href="/blog/bittensor-tao-decentralized-ai-crypto">
+    <a class="card-item-h" href="/blog/bittensor-tao-decentralized-ai-crypto" data-tags="ai-crypto fundamentals">
       <div class="card-item-img" style="background:linear-gradient(135deg,#0a0a0a,#0d0e14);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
         <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(200,158,22,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,158,22,0.04) 1px,transparent 1px);background-size:32px 32px;"></div>
         <div style="position:relative;z-index:1;text-align:center;">
@@ -282,7 +282,7 @@
         <span class="card-item-cta">Read article &rarr;</span>
       </div>
     </a>
-    <a class="card-item-h" href="/blog/leverage-crypto-trading">
+    <a class="card-item-h" href="/blog/leverage-crypto-trading" data-tags="fundamentals risk-management">
       <div class="card-item-img">
         <img src="/blog/images/blog-leverage-graphic-1-amplification.png" alt="Leverage in crypto trading — amplification diagram">
       </div>
@@ -300,7 +300,7 @@
         <span class="card-item-cta">Read article &rarr;</span>
       </div>
     </a>
-    <a class="card-item-h" href="/blog/risk-reward-ratio-crypto-trading">
+    <a class="card-item-h" href="/blog/risk-reward-ratio-crypto-trading" data-tags="fundamentals risk-management">
       <div class="card-item-img">
         <img src="/blog/images/blog-graphic-1-entry-sl-tp.png" alt="Risk-reward ratio crypto trading diagram">
       </div>
@@ -381,6 +381,28 @@
   }
 </script>
 
+<script>
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+      const featured = document.querySelector('.card-featured');
+      const cards = document.querySelectorAll('.card-item-h, .card-item');
+      const placeholder = document.querySelector('.card-placeholder');
+      if (filter === 'all') {
+        featured.style.display = '';
+        cards.forEach(c => c.style.display = '');
+        if (placeholder) placeholder.style.display = '';
+      } else {
+        const match = el => (el.dataset.tags || '').split(' ').includes(filter);
+        featured.style.display = match(featured) ? '' : 'none';
+        cards.forEach(c => c.style.display = match(c) ? '' : 'none');
+        if (placeholder) placeholder.style.display = 'none';
+      }
+    });
+  });
+</script>
 <script defer src="../_vercel/insights/script.js"></script>
 </body>
 </html>
