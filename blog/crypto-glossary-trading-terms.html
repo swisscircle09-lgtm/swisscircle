@@ -118,6 +118,15 @@
   .callout strong { color: rgba(200,158,22,0.85); }
 
   /* ── Subscribe box */
+  .membership-box { margin: 24px 0 32px; background: linear-gradient(135deg, rgba(12,10,4,0.95), rgba(18,14,4,0.95)); border: 1px solid rgba(200,158,22,0.22); border-radius: 10px; overflow: hidden; display: flex; align-items: stretch; }
+  .membership-bar { width: 4px; background: linear-gradient(to bottom, rgba(200,158,22,0.9), rgba(200,158,22,0.3)); flex-shrink: 0; }
+  .membership-body { padding: 28px 32px; flex: 1; }
+  .membership-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(200,158,22,0.6); font-weight: 600; margin-bottom: 8px; }
+  .membership-title { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 700; color: rgba(255,255,255,0.92); letter-spacing: 0.03em; margin-bottom: 8px; }
+  .membership-text { font-size: 13.5px; color: rgba(255,255,255,0.45); line-height: 1.65; margin-bottom: 20px; }
+  .membership-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .membership-btn { display: inline-block; background: linear-gradient(135deg, rgba(200,158,22,0.95), rgba(180,138,12,0.95)); color: #0c0c0c; font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; padding: 11px 24px; border-radius: 5px; }
+  .membership-note { font-size: 12px; color: rgba(255,255,255,0.25); }
   .sub-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 40px 44px; margin: 64px 0 0; text-align: center; }
   .sub-box-label { font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(200,158,22,0.65); margin-bottom: 12px; }
   .sub-box-title { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.88); margin-bottom: 8px; }
@@ -615,6 +624,19 @@
       <label for="artConsent">I agree to receive Swiss Circle blog notifications. No spam — unsubscribe any time.</label>
     </div>
     <div class="sub-msg" id="artMsg"></div>
+  </div>
+
+  <div class="membership-box">
+    <div class="membership-bar"></div>
+    <div class="membership-body">
+      <div class="membership-eyebrow">Swiss Circle Membership</div>
+      <div class="membership-title">Put this into practice with real trade signals.</div>
+      <div class="membership-text">Every signal we publish includes a defined Entry, Stop-Loss, and Take-Profit &mdash; so you can see every term in this glossary applied in real markets, every week. Full community access from day one. No lock-in.</div>
+      <div class="membership-actions">
+        <a class="membership-btn" href="https://whop.com/c/swiss-trader-s-circle/wb" target="_blank" rel="noopener">Join for $79.95 / month &rarr;</a>
+        <span class="membership-note">Cancel anytime &nbsp;&middot;&nbsp; Instant Discord access</span>
+      </div>
+    </div>
   </div>
 
   <!-- ── Related Articles ── -->
