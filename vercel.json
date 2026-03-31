@@ -12,6 +12,7 @@
     { "source": "/blog/leverage-crypto-trading", "destination": "/blog/leverage-crypto-trading.html" },
     { "source": "/blog/bittensor-tao-decentralized-ai-crypto", "destination": "/blog/bittensor-tao-decentralized-ai-crypto.html" },
     { "source": "/blog/bittensor-tao-subnets-staking-guide", "destination": "/blog/bittensor-tao-subnets-staking-guide.html" },
-    { "source": "/blog/crypto-glossary-trading-terms", "destination": "/blog/crypto-glossary-trading-terms.html" }
+    { "source": "/blog/crypto-glossary-trading-terms", "destination": "/blog/crypto-glossary-trading-terms.html" },
+    { "source": "/blog/ai-agents-vs-crypto-signals", "destination": "/blog/ai-agents-vs-crypto-signals.html" }
   ]
 }
